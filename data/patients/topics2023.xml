@@ -1,0 +1,412 @@
+<topics task="2023 TREC Clinical Trials">
+  <topic number="1" template="glaucoma">
+    <field name="definitive diagnosis">primary open angle glaucoma</field>
+    <field name="intraocular pressure"/>
+    <field name="visual field">moderate field damage</field>
+    <field name="visual acuity">0.3</field>
+    <field name="prior cataract surgery">no</field>
+    <field name="prior LASIK surgery">no</field>
+    <field name="comorbid ocular diseases">corneal edema</field>
+  </topic>
+  <topic number="2" template="glaucoma">
+    <field name="definitive diagnosis">pigmentary</field>
+    <field name="intraocular pressure">15 mmHg</field>
+    <field name="visual field">normal</field>
+    <field name="visual acuity">20/50</field>
+    <field name="prior cataract surgery">no</field>
+    <field name="prior LASIK surgery">yes</field>
+    <field name="comorbid ocular diseases">macular degeneration</field>
+  </topic>
+  <topic number="3" template="glaucoma">
+    <field name="definitive diagnosis">uveitic glaucoma</field>
+    <field name="intraocular pressure">28 mmHg</field>
+    <field name="visual field">early field damage</field>
+    <field name="visual acuity">20/30</field>
+    <field name="prior cataract surgery">no</field>
+    <field name="prior LASIK surgery">no</field>
+    <field name="comorbid ocular diseases">macular edema</field>
+  </topic>
+  <topic number="4" template="glaucoma">
+    <field name="definitive diagnosis">POAG</field>
+    <field name="intraocular pressure">48 mmHg</field>
+    <field name="visual field">advanced glaucomatous field damage</field>
+    <field name="visual acuity">20/150</field>
+    <field name="prior cataract surgery">yes</field>
+    <field name="prior LASIK surgery">no</field>
+    <field name="comorbid ocular diseases">diabetic retinopathy</field>
+  </topic>
+  <topic number="5" template="glaucoma">
+    <field name="definitive diagnosis">neovascular glaucoma</field>
+    <field name="intraocular pressure">22 mgHg</field>
+    <field name="visual field">normal</field>
+    <field name="visual acuity">0.2</field>
+    <field name="prior cataract surgery">yes</field>
+    <field name="prior LASIK surgery">no</field>
+    <field name="comorbid ocular diseases"/>
+  </topic>
+  <topic number="6" template="anxiety">
+    <field name="definitive diagnosis">yes</field>
+    <field name="age">39</field>
+    <field name="proficient languages">English</field>
+    <field name="SSASI">6</field>
+    <field name="HAM-A">20</field>
+    <field name="PHQ-9">7</field>
+    <field name="HAM-D">23</field>
+    <field name="GAD-7"/>
+    <field name="Beck Depression Inventory"/>
+    <field name="suicidal ideation">yes</field>
+    <field name="dementia">no</field>
+  </topic>
+  <topic number="7" template="anxiety">
+    <field name="definitive diagnosis">yes</field>
+    <field name="age">25 years old</field>
+    <field name="proficient languages">English, Swedish</field>
+    <field name="SSASI"/>
+    <field name="HAM-A"/>
+    <field name="PHQ-9">18</field>
+    <field name="HAM-D">19</field>
+    <field name="GAD-7">20</field>
+    <field name="Beck Depression Inventory">12</field>
+    <field name="suicidal ideation">yes</field>
+    <field name="dementia">no</field>
+  </topic>
+  <topic number="8" template="anxiety">
+    <field name="definitive diagnosis">no</field>
+    <field name="age">12yo</field>
+    <field name="proficient languages">English, Spanish</field>
+    <field name="SSASI">12</field>
+    <field name="HAM-A">25</field>
+    <field name="PHQ-9"/>
+    <field name="HAM-D">14</field>
+    <field name="GAD-7"/>
+    <field name="Beck Depression Inventory"/>
+    <field name="suicidal ideation">no</field>
+    <field name="dementia">no</field>
+  </topic>
+  <topic number="9" template="anxiety">
+    <field name="definitive diagnosis">yes</field>
+    <field name="age">adult</field>
+    <field name="proficient languages">English, Dutch</field>
+    <field name="SSASI"/>
+    <field name="HAM-A">18</field>
+    <field name="PHQ-9">22</field>
+    <field name="HAM-D">24</field>
+    <field name="GAD-7">12</field>
+    <field name="Beck Depression Inventory"/>
+    <field name="suicidal ideation">yes</field>
+    <field name="dementia">no</field>
+  </topic>
+  <topic number="10" template="anxiety">
+    <field name="definitive diagnosis">yes</field>
+    <field name="age">58 y/o</field>
+    <field name="proficient languages">English, Turkish</field>
+    <field name="SSASI"/>
+    <field name="HAM-A">12</field>
+    <field name="PHQ-9"/>
+    <field name="HAM-D">19</field>
+    <field name="GAD-7">9</field>
+    <field name="Beck Depression Inventory">8</field>
+    <field name="suicidal ideation">no</field>
+    <field name="dementia">yes</field>
+  </topic>
+  <topic number="11" template="COPD">
+    <field name="definitive diagnosis">yes</field>
+    <field name="FEV1">85%</field>
+    <field name="GOLD stage">III</field>
+    <field name="exacerbations">three in past year</field>
+    <field name="COPD treatments">bronchodilator, steroids</field>
+    <field name="smoking history">5 cigarettes/day until stopping 2 years ago</field>
+    <field name="lung comorbidities">interstitial lung disease</field>
+    <field name="other comorbidities">hypertension</field>
+  </topic>
+  <topic number="12" template="COPD">
+    <field name="definitive diagnosis">yes</field>
+    <field name="FEV1">50%</field>
+    <field name="GOLD stage">II</field>
+    <field name="exacerbations">two last month</field>
+    <field name="COPD treatments">none</field>
+    <field name="smoking history">never</field>
+    <field name="lung comorbidities">asthma</field>
+    <field name="other comorbidities">none</field>
+  </topic>
+  <topic number="13" template="COPD">
+    <field name="definitive diagnosis">yes</field>
+    <field name="FEV1">65%</field>
+    <field name="GOLD stage">IV</field>
+    <field name="exacerbations">8 in past 12 mo</field>
+    <field name="COPD treatments">EVB, pulmonary rehab</field>
+    <field name="smoking history">2 packs day</field>
+    <field name="lung comorbidities">lung cancer</field>
+    <field name="other comorbidities">none</field>
+  </topic>
+  <topic number="14" template="COPD">
+    <field name="definitive diagnosis">yes</field>
+    <field name="FEV1">72%</field>
+    <field name="GOLD stage">II</field>
+    <field name="exacerbations">first two weeks ago</field>
+    <field name="COPD treatments">steroids</field>
+    <field name="smoking history">none</field>
+    <field name="lung comorbidities">none</field>
+    <field name="other comorbidities">glaucoma</field>
+  </topic>
+  <topic number="15" template="COPD">
+    <field name="definitive diagnosis">yes</field>
+    <field name="FEV1">55%</field>
+    <field name="GOLD stage">early</field>
+    <field name="exacerbations">none</field>
+    <field name="COPD treatments">none</field>
+    <field name="smoking history">none</field>
+    <field name="lung comorbidities">none</field>
+    <field name="other comorbidities">none</field>
+  </topic>
+  <topic number="16" template="breast cancer">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HER2">positive</field>
+    <field name="hormone receptors"/>
+    <field name="prior chemotherapy">no</field>
+    <field name="prior radiotherapy">no</field>
+    <field name="prior mastectomy">no</field>
+    <field name="surgery-related therapy"/>
+    <field name="performance status">ECOG 1</field>
+  </topic>
+  <topic number="17" template="breast cancer">
+    <field name="definitive diagnosis">stage III</field>
+    <field name="HER2">negative</field>
+    <field name="hormone receptors">ER+, PR-</field>
+    <field name="prior chemotherapy">neoadjuvant chemotherapy</field>
+    <field name="prior radiotherapy">stereotactic radiotherapy</field>
+    <field name="prior mastectomy">yes</field>
+    <field name="surgery-related therapy">neoadjuvant chemotherapy</field>
+    <field name="performance status">ECOG 2</field>
+  </topic>
+  <topic number="18" template="breast cancer">
+    <field name="definitive diagnosis">stage 2</field>
+    <field name="HER2">positive</field>
+    <field name="hormone receptors">PR-, ER-</field>
+    <field name="prior chemotherapy">no</field>
+    <field name="prior radiotherapy">yes</field>
+    <field name="prior mastectomy">no</field>
+    <field name="surgery-related therapy"/>
+    <field name="performance status">Karnofsky 70%</field>
+  </topic>
+  <topic number="19" template="breast cancer">
+    <field name="definitive diagnosis">stage IV</field>
+    <field name="HER2">positive</field>
+    <field name="hormone receptors">PR positive</field>
+    <field name="prior chemotherapy">yes</field>
+    <field name="prior radiotherapy">yes</field>
+    <field name="prior mastectomy">yes</field>
+    <field name="surgery-related therapy">neoadjuvant chemotherapy</field>
+    <field name="performance status">ECOG 3, Karnofsky 50%</field>
+  </topic>
+  <topic number="20" template="breast cancer">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HER2">negative</field>
+    <field name="hormone receptors"/>
+    <field name="prior chemotherapy">no </field>
+    <field name="prior radiotherapy">no</field>
+    <field name="prior mastectomy">no</field>
+    <field name="surgery-related therapy"/>
+    <field name="performance status">ECOG 1</field>
+  </topic>
+  <topic number="21" template="COVID-19">
+    <field name="definitive diagnosis">PCR-confirmed</field>
+    <field name="symptoms">fever, muscle pain, shortness of breath</field>
+    <field name="hospitalization">5 days</field>
+    <field name="ventilation">2 days</field>
+    <field name="vaccination status">1 shot mRNA</field>
+    <field name="oxygen saturation">95%</field>
+    <field name="comorbid respiratory diseases">asthma</field>
+  </topic>
+  <topic number="22" template="COVID-19">
+    <field name="definitive diagnosis">confirmed by PCR</field>
+    <field name="symptoms">fever, headache, body pains</field>
+    <field name="hospitalization">yes</field>
+    <field name="ventilation">yes</field>
+    <field name="vaccination status">unvaccinated</field>
+    <field name="oxygen saturation">96%</field>
+    <field name="comorbid respiratory diseases">bronchiectasis</field>
+  </topic>
+  <topic number="23" template="COVID-19">
+    <field name="definitive diagnosis">yes (PCR)</field>
+    <field name="symptoms">fever, muscle pain</field>
+    <field name="hospitalization">no</field>
+    <field name="ventilation">no</field>
+    <field name="vaccination status">2-shot + booster</field>
+    <field name="oxygen saturation">97%</field>
+    <field name="comorbid respiratory diseases">none</field>
+  </topic>
+  <topic number="24" template="COVID-19">
+    <field name="definitive diagnosis">positive on rapid test only</field>
+    <field name="symptoms">headache, fatigue</field>
+    <field name="hospitalization">no</field>
+    <field name="ventilation">no</field>
+    <field name="vaccination status">unvaccinated</field>
+    <field name="oxygen saturation">98%</field>
+    <field name="comorbid respiratory diseases">asthma</field>
+  </topic>
+  <topic number="25" template="COVID-19">
+    <field name="definitive diagnosis">never</field>
+    <field name="symptoms">headache</field>
+    <field name="hospitalization">no</field>
+    <field name="ventilation">no</field>
+    <field name="vaccination status">unvaccinated</field>
+    <field name="oxygen saturation"/>
+    <field name="comorbid respiratory diseases">none</field>
+  </topic>
+  <topic number="26" template="rheumatoid arthritis">
+    <field name="definitive diagnosis">yes</field>
+    <field name="active DMARD treatment">methotrexate</field>
+    <field name="prior DMARD treatment">none</field>
+    <field name="other RA medications">ibuprofen</field>
+    <field name="affected joints">3 swollen joints</field>
+    <field name="tuberculosis">no</field>
+    <field name="DAS-28 CRP"/>
+    <field name="comorbidities">hypertension</field>
+  </topic>
+  <topic number="27" template="rheumatoid arthritis">
+    <field name="definitive diagnosis">yes</field>
+    <field name="active DMARD treatment">none</field>
+    <field name="prior DMARD treatment">hydroxychloroquine</field>
+    <field name="other RA medications">prednisone</field>
+    <field name="affected joints">3 swollen, 2 tender joints</field>
+    <field name="tuberculosis">no</field>
+    <field name="DAS-28 CRP">4</field>
+    <field name="comorbidities">none</field>
+  </topic>
+  <topic number="28" template="rheumatoid arthritis">
+    <field name="definitive diagnosis">yes</field>
+    <field name="active DMARD treatment">anti-TNF therapy</field>
+    <field name="prior DMARD treatment">methotrexate</field>
+    <field name="other RA medications">naproxen</field>
+    <field name="affected joints">5 swollen joints, 2 tender joints</field>
+    <field name="tuberculosis">past</field>
+    <field name="DAS-28 CRP"/>
+    <field name="comorbidities">none</field>
+  </topic>
+  <topic number="29" template="rheumatoid arthritis">
+    <field name="definitive diagnosis">yes</field>
+    <field name="active DMARD treatment">hydroxychloroquine</field>
+    <field name="prior DMARD treatment">none</field>
+    <field name="other RA medications">ibuprofen</field>
+    <field name="affected joints">6 tender joints</field>
+    <field name="tuberculosis">no</field>
+    <field name="DAS-28 CRP">5.5 </field>
+    <field name="comorbidities">diabetes</field>
+  </topic>
+  <topic number="30" template="rheumatoid arthritis">
+    <field name="definitive diagnosis">yes</field>
+    <field name="active DMARD treatment">anti-TNF therapy</field>
+    <field name="prior DMARD treatment">none</field>
+    <field name="other RA medications">none</field>
+    <field name="affected joints"/>
+    <field name="tuberculosis">no</field>
+    <field name="DAS-28 CRP"/>
+    <field name="comorbidities">none</field>
+  </topic>
+  <topic number="31" template="sickle cell anemia">
+    <field name="definitive diagnosis">SS</field>
+    <field name="blood transfusion">1 week ago</field>
+    <field name="hemoglobin">5.8 g/dL</field>
+    <field name="last vaso occlusive crisis">2 months ago</field>
+    <field name="stroke history">never</field>
+  </topic>
+  <topic number="32" template="sickle cell anemia">
+    <field name="definitive diagnosis">SC</field>
+    <field name="blood transfusion">never</field>
+    <field name="hemoglobin">8.7 g/dl</field>
+    <field name="last vaso occlusive crisis">5 in last 12 months</field>
+    <field name="stroke history">stroke 12 years ago</field>
+  </topic>
+  <topic number="33" template="sickle cell anemia">
+    <field name="definitive diagnosis">SB+</field>
+    <field name="blood transfusion">3 weeks ago</field>
+    <field name="hemoglobin">10.5</field>
+    <field name="last vaso occlusive crisis">6 months ago</field>
+    <field name="stroke history">never</field>
+  </topic>
+  <topic number="34" template="sickle cell anemia">
+    <field name="definitive diagnosis">SS</field>
+    <field name="blood transfusion">six months ago</field>
+    <field name="hemoglobin">9.0 g/DL</field>
+    <field name="last vaso occlusive crisis">2 years ago</field>
+    <field name="stroke history">ischemic stroke 2 years ago</field>
+  </topic>
+  <topic number="35" template="sickle cell anemia">
+    <field name="definitive diagnosis">SB0</field>
+    <field name="blood transfusion">never</field>
+    <field name="hemoglobin">7.5 g/dL</field>
+    <field name="last vaso occlusive crisis">2 weeks ago</field>
+    <field name="stroke history">never</field>
+  </topic>
+  <topic number="36" template="type 2 diabetes">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HbA1c">7.2%</field>
+    <field name="glucose">fasting glucose of 138</field>
+    <field name="BMI">45</field>
+    <field name="insulin">no</field>
+    <field name="metformin">no</field>
+    <field name="other anti-diabetic drugs">no</field>
+    <field name="diet restrictions">no</field>
+    <field name="exercise">limited to wheelchair</field>
+    <field name="ketoacidosis history">no</field>
+    <field name="comorbidities">lung cancer, hypertension, dementia</field>
+    <field name="hospitalization events">myocardial infarction 6 mo  ago</field>
+  </topic>
+  <topic number="37" template="type 2 diabetes">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HbA1c">4.5</field>
+    <field name="glucose">95</field>
+    <field name="BMI">28</field>
+    <field name="insulin">no</field>
+    <field name="metformin">5 ml</field>
+    <field name="other anti-diabetic drugs">thiazolidinedione</field>
+    <field name="diet restrictions">low-calorie</field>
+    <field name="exercise">walk 2 miles per week</field>
+    <field name="ketoacidosis history">yes</field>
+    <field name="comorbidities">hypertension, thyroid disorder</field>
+    <field name="hospitalization events">never</field>
+  </topic>
+  <topic number="38" template="type 2 diabetes">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HbA1c">6</field>
+    <field name="glucose">fasting blood sugar 115</field>
+    <field name="BMI">35</field>
+    <field name="insulin">yes</field>
+    <field name="metformin">8.5 mL</field>
+    <field name="other anti-diabetic drugs">sulfonylurea</field>
+    <field name="diet restrictions">periodic fasting</field>
+    <field name="exercise">walk 500 meters/day</field>
+    <field name="ketoacidosis history">no</field>
+    <field name="comorbidities">none</field>
+    <field name="hospitalization events">stroke last year</field>
+  </topic>
+  <topic number="39" template="type 2 diabetes">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HbA1c">5.5</field>
+    <field name="glucose">100</field>
+    <field name="BMI">32</field>
+    <field name="insulin">no</field>
+    <field name="metformin">5 ML</field>
+    <field name="other anti-diabetic drugs">no</field>
+    <field name="diet restrictions">keto diet</field>
+    <field name="exercise">jog 2 miles per day</field>
+    <field name="ketoacidosis history">yes</field>
+    <field name="comorbidities">hypertension</field>
+    <field name="hospitalization events">never</field>
+  </topic>
+  <topic number="40" template="type 2 diabetes">
+    <field name="definitive diagnosis">yes</field>
+    <field name="HbA1c">6.3</field>
+    <field name="glucose">115 fasting blood sugar</field>
+    <field name="BMI">40</field>
+    <field name="insulin">no</field>
+    <field name="metformin">8.5 mL</field>
+    <field name="other anti-diabetic drugs">no</field>
+    <field name="diet restrictions">low-calorie</field>
+    <field name="exercise">no</field>
+    <field name="ketoacidosis history"/>
+    <field name="comorbidities">chronic kidney disease</field>
+    <field name="hospitalization events">never</field>
+  </topic>
+</topics>

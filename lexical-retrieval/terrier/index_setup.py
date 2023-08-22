@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+
 import pyterrier as pt
 from tqdm import tqdm
 from dataclasses import asdict
@@ -14,7 +16,7 @@ def get_clinical_trial_dict(first_n=None):
 
 def index_clinical_trials(cts, ct_meta_fields, ct_text_fields):
     pt.init()
-    iter_indexer = pt.IterDictIndexer("./ct_index", overwrite=True, verbose=True, num_docs=len(cts),
+    iter_indexer = pt.IterDictIndexer("./ct_index", verbose=True, num_docs=len(cts),
                                       meta=ct_meta_fields,
                                       stemmer="porter",
                                       stopwords="terrier",
@@ -27,8 +29,12 @@ def index_clinical_trials(cts, ct_meta_fields, ct_text_fields):
     print(index.getCollectionStatistics().toString())
 
 if __name__ == "__main__":
-    
-    cts = get_clinical_trial_dict()
+
+    parser = ArgumentParser()
+    parser.add_argument("-n", "--first_n", type=int, default=None, help="Number of clinical trials to index")
+    args = parser.parse_args()
+
+    cts = get_clinical_trial_dict(args.first_n)
 
     # Rename field nct_id to docno (required by pyterrier)
     for ct in tqdm(cts):

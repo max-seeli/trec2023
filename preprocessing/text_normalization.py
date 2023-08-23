@@ -6,6 +6,9 @@ import spacy
 tokenizer = AutoTokenizer.from_pretrained("alvaroalon2/biobert_diseases_ner")
 model = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_diseases_ner")
 
+tokenizer_chem = AutoTokenizer.from_pretrained("alvaroalon2/biobert_chemical_ner")
+model_chem = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_chemical_ner")
+
 tokenizer_neg = AutoTokenizer.from_pretrained("bvanaken/clinical-assertion-negation-bert")
 model_neg = AutoModelForSequenceClassification.from_pretrained("bvanaken/clinical-assertion-negation-bert")
 
@@ -81,23 +84,65 @@ def extract_entities(text):
                 new_sentence = new_sentence + " " + tokens[i]
             continue
 
+    new_sentence = new_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").strip()
+
+    inputs = tokenizer_chem.encode(new_sentence, return_tensors="pt")
+    outputs = model_chem(inputs)[0]
+    #print(outputs)
+    predictions = torch.argmax(outputs, dim=2)
+    #print(predictions)
+    tokens = tokenizer_chem.convert_ids_to_tokens(inputs[0])
+    #print(tokens)
+
+    new_chem_sentence = ""
+       
+    preds = predictions[0].tolist()
+    #print(preds)
+    prev = False
+
+    for i in range(len(tokens)):
+        label = "[entity]"
+
+        if preds[i] == 0 and not prev:
+            entities.append(tokens[i])
+            new_chem_sentence = new_chem_sentence + " " + label + " " + tokens[i]
+            prev = True
+        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev:
+            if tokens[i].startswith("##"):
+                entities[len(entities)-1] = (entities[len(entities)-1] + tokens[i][2:])
+                new_chem_sentence = new_chem_sentence + tokens[i][2:]
+            else:
+                entities[len(entities)-1] = (entities[len(entities)-1] + " " + tokens[i])
+                new_chem_sentence = new_chem_sentence + " " + tokens[i]
+        else:
+            if prev:
+                new_chem_sentence = new_chem_sentence + " " + label
+            prev = False
+            if tokens[i].startswith("##"):
+                new_chem_sentence = new_chem_sentence + tokens[i][2:]
+            else:
+                new_chem_sentence = new_chem_sentence + " " + tokens[i]
+            continue
+
     if entities == []:
         return entities
 
-    new_sentence = new_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").strip()
+    new_chem_sentence = new_chem_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").replace("[ ", "[").replace(" ]", "]").strip()
 
-    variations = generate_variations(new_sentence)
+    variations = generate_variations(new_chem_sentence)
 
     if variations == []:
-        variations = new_sentence
+        variations = [new_new_sentence]
 
     #print(new_sentence)
 
-    #print(variations)
+    #print(new_chem_sentence)
+
+    print(variations)
 
     classifier = TextClassificationPipeline(model=model_neg, tokenizer=tokenizer_neg)
 
-    counter = 0;
+    final_entities = []
 
     for sentence in variations:
 
@@ -110,17 +155,17 @@ def extract_entities(text):
         #print(entities)
 
         if "ABSENT" in str(classification):
-            entities[counter] = "n_" + entities[counter].lower().replace(" ", "_")
+            entity = re.findall(r'\[entity\].*?\[entity\]', sentence)[0].replace("[entity]","").strip()
+            final_entities.append("n_" + entity.lower().replace(" ", "_"))
             #entities = ["n_" + item.lower().replace(" ", "_") for item in entities]
         else:
-            entities[counter] = entities[counter].lower().replace(" ", "_")
+            entity = re.findall(r'\[entity\].*?\[entity\]', sentence)[0].replace("[entity]","").strip()
+            final_entities.append(entity.lower().replace(" ", "_"))
             #entities = [item.lower().replace(" ", "_") for item in entities]
 
-        counter = counter + 1
+    return final_entities
 
-    return entities
-
-text = "Must not have any allergies, but has diabetes. Patient has no history of leukemia, but does have a history of glaucoma."
+text = "After entry into the study, the initial 12 patients are expected to be followed for at least 1 month after the infusion of [F-18]FLT."
 
 texts = split_into_sentences(text)
 

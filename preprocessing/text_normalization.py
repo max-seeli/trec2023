@@ -38,7 +38,7 @@ def generate_variations(sentence):
     variations = []
 
     for entity in entities:
-        variations.append(remove_entities_except_substring(sentence, entity))
+        variations.append(remove_entities_except_substring(sentence, entity).strip())
 
     #print(variations)
 
@@ -67,22 +67,25 @@ def extract_entities(text):
             entities.append(tokens[i])
             new_sentence = new_sentence + " " + label + " " + tokens[i]
             prev = True
-        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev:
+        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev and not (tokens[i] == "[SEP]" or tokens[i] == "[CLS]"):
             if tokens[i].startswith("##"):
                 entities[len(entities)-1] = (entities[len(entities)-1] + tokens[i][2:])
                 new_sentence = new_sentence + tokens[i][2:]
             else:
                 entities[len(entities)-1] = (entities[len(entities)-1] + " " + tokens[i])
                 new_sentence = new_sentence + " " + tokens[i]
-        else:
+        elif preds[i] == 2 or tokens[i] == "[SEP]" or tokens[i] == "[CLS]":
             if prev:
-                new_sentence = new_sentence + " " + label
-            prev = False
-            if tokens[i].startswith("##"):
-                new_sentence = new_sentence + tokens[i][2:]
+                prev = False
+                if tokens[i].startswith("##"):
+                    new_sentence = new_sentence + " " + label + tokens[i][:2]
+                else:
+                    new_sentence = new_sentence + " " + label + tokens[i]
             else:
-                new_sentence = new_sentence + " " + tokens[i]
-            continue
+                if tokens[i].startswith("##"):
+                    new_sentence = new_sentence + tokens[i][2:]
+                else:
+                    new_sentence = new_sentence + " " + tokens[i]
 
     new_sentence = new_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").strip()
 
@@ -107,16 +110,17 @@ def extract_entities(text):
             entities.append(tokens[i])
             new_chem_sentence = new_chem_sentence + " " + label + " " + tokens[i]
             prev = True
-        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev:
+        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev and not (tokens[i] == "[SEP]" or tokens[i] == "[CLS]"):
             if tokens[i].startswith("##"):
                 entities[len(entities)-1] = (entities[len(entities)-1] + tokens[i][2:])
                 new_chem_sentence = new_chem_sentence + tokens[i][2:]
             else:
                 entities[len(entities)-1] = (entities[len(entities)-1] + " " + tokens[i])
                 new_chem_sentence = new_chem_sentence + " " + tokens[i]
-        else:
+        elif preds[i] == 2 or tokens[i] == "[SEP]" or tokens[i] == "[CLS]":
             if prev:
                 new_chem_sentence = new_chem_sentence + " " + label
+                continue
             prev = False
             if tokens[i].startswith("##"):
                 new_chem_sentence = new_chem_sentence + tokens[i][2:]
@@ -127,18 +131,18 @@ def extract_entities(text):
     if entities == []:
         return entities
 
-    new_chem_sentence = new_chem_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").replace("[ ", "[").replace(" ]", "]").strip()
+    new_chem_sentence = new_chem_sentence.replace("[CLS]", "").replace("[SEP]", "").replace("[ ", "[").replace(" ]", "]")
 
     variations = generate_variations(new_chem_sentence)
 
     if variations == []:
-        variations = [new_new_sentence]
+        variations = [new_chem_sentence]
 
     #print(new_sentence)
 
     #print(new_chem_sentence)
 
-    print(variations)
+    #print(variations)
 
     classifier = TextClassificationPipeline(model=model_neg, tokenizer=tokenizer_neg)
 
@@ -165,14 +169,25 @@ def extract_entities(text):
 
     return final_entities
 
-text = "After entry into the study, the initial 12 patients are expected to be followed for at least 1 month after the infusion of [F-18]FLT."
+def pipeline(text):
+    texts = split_into_sentences(text)
 
-texts = split_into_sentences(text)
+    extracted_entities = []
+    for text in texts:
+        extracted_entities.extend(extract_entities(text))
+
+    print(extracted_entities)
+    return extracted_entities
+
+
+#text = "Pervasive developmental disorders, Selective mutism, Mental retardation"
+
+#texts = split_into_sentences(text)
 
 #print(texts)
 
-extracted_entities = []
-for text in texts:
-    extracted_entities.extend(extract_entities(text))
+#extracted_entities = []
+#for text in texts:
+#    extracted_entities.extend(extract_entities(text))
 
-print(extracted_entities)
+#print(extracted_entities)

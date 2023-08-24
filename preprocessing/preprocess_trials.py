@@ -1,64 +1,75 @@
 from text_normalization import pipeline
-from elasticsearch import Elasticsearch
 import json
-from dataclasses import asdict
+from tqdm import tqdm
 
-client = Elasticsearch(
-    "http://localhost:9200/"
-)
+trials = []
 
-#diagnoses = ["glaucoma", "anxiety", "COPD", "breast cancer", "COVID-19", "rheumatoid arthritis", "sickle cell anemia", "type 2 diabetes"]
-diagnoses = ["glaucoma", "anxiety"]
+with open("trials.json", "r") as json_file:
+    trials = json.load(json_file)
 
-entries = []
-uids = set()
+with open("trials_preprocessed.json", "w") as file:
+    file.write("[")
 
-for diagnosis in diagnoses:
+for index, trial in tqdm(enumerate(trials)):
+    inclusion_criteria = trial['inclusion']
     
-    search_query = {
-        "size": 10,
-        "query": {
-            "bool": {
-                "must": [
-                    {
-                        "query_string": {
-                            "query": diagnosis
-                        }
-                    }
-                ]
-            }
-        }
-    }
+    inclusion_criteria_preprocessed = []
+    for criterium in inclusion_criteria:
+        preprocessed_criteria = pipeline(criterium)
+        for preprocessed_criterium in preprocessed_criteria:
+            inclusion_criteria_preprocessed.append(preprocessed_criterium)
 
-    search_results = client.search(index="trials", body=search_query)
+    exclusion_criteria = trial['exclusion']
+    
+    exclusion_criteria_preprocessed = []
+    for criterium in exclusion_criteria:
+        preprocessed_criteria = pipeline(criterium)
+        for preprocessed_criterium in preprocessed_criteria:
+            exclusion_criteria_preprocessed.append(preprocessed_criterium)
 
-    for hit in search_results["hits"]["hits"]:
-        stored_json_data = hit["_source"]
+    #move negatives
 
-        uid = stored_json_data['nct_id']
+    exclusion_criteria_unique = []
+    inclusion_criteria_unique = []
 
-        if uid in uids:
-            print("Trial {stored_json_data['nct_id']} already found.")
+    for criterium in inclusion_criteria_preprocessed:
+        if criterium.startswith("n_"):
+            exclusion_criteria_unique.append(criterium[2:])
         else:
-            inclusion_criteria = stored_json_data['inclusion']
-            
-            inclusion_criteria_preprocessed = []
-            for criterium in inclusion_criteria:
-                preprocessed_criteria = pipeline(criterium)
-                for preprocessed_criterium in preprocessed_criteria:
-                    inclusion_criteria_preprocessed.append(preprocessed_criterium)
+            inclusion_criteria_unique.append(criterium)
 
-            exclusion_criteria = stored_json_data['exclusion']
-            
-            exclusion_criteria_preprocessed = []
-            for criterium in exclusion_criteria:
-                preprocessed_criteria = pipeline(criterium)
-                for preprocessed_criterium in preprocessed_criteria:
-                    exclusion_criteria_preprocessed.append(preprocessed_criterium)
+    for criterium in exclusion_criteria_preprocessed:
+        if criterium.startswith("n_"):
+            inclusion_criteria_unique.append(criterium[2:])
+        else:
+            exclusion_criteria_unique.append(criterium)
 
-            entries.append({"nct_id": stored_json_data['nct_id'],
-                            "inclusion": inclusion_criteria_preprocessed,
-                            "exclusion": exclusion_criteria_preprocessed})
-print(entries)
+    #remove duplicates
+
+    inclusion_criteria_unique = dict.fromkeys(inclusion_criteria_unique)
+    exclusion_criteria_unique = dict.fromkeys(exclusion_criteria_unique)
+
+    #remove duplicates across criteria
+
+    exclusion_criteria_final = []
+    inclusion_criteria_final = []
+
+    exclusion_criteria_final = [item for item in exclusion_criteria_unique if item not in inclusion_criteria_unique]
+    inclusion_criteria_final = [item for item in inclusion_criteria_unique if item not in exclusion_criteria_unique]
 
 
+    preprocessed_trial = {"nct_id": trial['nct_id'],
+                    "minimum_age": trial['minimum_age'],
+                    "maximum_age": trial['maximum_age'],
+                    "gender": trial['gender'],
+                    "inclusion": inclusion_criteria_final,
+                    "exclusion": exclusion_criteria_final}
+
+    with open("trials_preprocessed.json", "a") as file:
+        file.write(json.dumps(preprocessed_trial))
+
+        if not index == len(trials)-1:
+            file.write(",")
+
+with open("trials_preprocessed.json", "a") as file:
+    file.write("]")

@@ -78,7 +78,7 @@ def extract_entities(text):
             if prev:
                 prev = False
                 if tokens[i].startswith("##"):
-                    new_sentence = new_sentence + " " + label + tokens[i][:2]
+                    new_sentence = new_sentence + " " + label + tokens[i][2:]
                 else:
                     new_sentence = new_sentence + " " + label + tokens[i]
             else:
@@ -119,14 +119,16 @@ def extract_entities(text):
                 new_chem_sentence = new_chem_sentence + " " + tokens[i]
         elif preds[i] == 2 or tokens[i] == "[SEP]" or tokens[i] == "[CLS]":
             if prev:
-                new_chem_sentence = new_chem_sentence + " " + label
-                continue
-            prev = False
-            if tokens[i].startswith("##"):
-                new_chem_sentence = new_chem_sentence + tokens[i][2:]
+                prev = False
+                if tokens[i].startswith("##"):
+                    new_chem_sentence = new_chem_sentence + " " + label + tokens[i][2:]
+                else:
+                    new_chem_sentence = new_chem_sentence + " " + label + tokens[i]
             else:
-                new_chem_sentence = new_chem_sentence + " " + tokens[i]
-            continue
+                if tokens[i].startswith("##"):
+                    new_chem_sentence = new_chem_sentence + tokens[i][2:]
+                else:
+                    new_chem_sentence = new_chem_sentence + " " + tokens[i]
 
     if entities == []:
         return entities
@@ -164,7 +166,10 @@ def extract_entities(text):
             #entities = ["n_" + item.lower().replace(" ", "_") for item in entities]
         else:
             entity = re.findall(r'\[entity\].*?\[entity\]', sentence)[0].replace("[entity]","").strip()
-            final_entities.append(entity.lower().replace(" ", "_"))
+            final_entity = entity.lower().replace(" ", "_").replace("#_#_", "")
+            final_entity = final_entity.replace("_-_", "-").replace("_/_", "/").replace("_,_", ",_").replace("_.","").replace("_._", ".").replace("_'_", "'")
+            if not (final_entity == "" or final_entity == ","):
+                final_entities.append(final_entity)
             #entities = [item.lower().replace(" ", "_") for item in entities]
 
     return final_entities
@@ -176,11 +181,11 @@ def pipeline(text):
     for text in texts:
         extracted_entities.extend(extract_entities(text))
 
-    print(extracted_entities)
+    #print(extracted_entities)
     return extracted_entities
 
 
-#text = "Pervasive developmental disorders, Selective mutism, Mental retardation"
+#text = "Medically unable or unwilling to discontinue current anti-diabetic therapy for 72 hours prior to admission to the research facility and remain off medication until the follow-up visit."
 
 #texts = split_into_sentences(text)
 

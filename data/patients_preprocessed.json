@@ -1,0 +1,285 @@
+[
+	{
+		"id": "1",
+		"age": null,
+		"gender": null,
+		"diagnoses": [
+			"primary_open_angle_glaucoma", "chronic_open_angle_glaucoma", "simple_chronic_glaucoma", "wide_angle_glaucoma", "open_angle_primary_glaucoma", "poag", "wide_open_angle_glaucoma", "simple_open_angle_glaucoma", "glaucoma_with_open_angle", "primary_wide_angle_glaucoma", "chronic_simple_glaucoma", "open_angle_glaucoma", "wide_angle_primary_glaucoma", "wide_open_angle_primary_glaucoma", "simple_wide_angle_glaucoma", "wide_open_angle_chronic_glaucoma", "primary_open-angle_glaucoma", "chronic_open-angle_glaucoma", "simple_open-angle_glaucoma", "wide-angle_primary_glaucoma",  "intraocular_pressure", "iocular_tension", "ocular_pressure", "eye_pressure", "ophthalmic_tension", "optic_pressure", "vision_tension", "retinal_pressure", "ocular_stress", "eye_tension", "optic_tension", "retinal_tension", "ocular_stress", "eye_stress", "ophthalmic_pressure", "vision_pressure", "retinal_stress", "intraeye_pressure", "eyeball_pressure", "optic_stress", "moderate field damage", "moderate_tissue_injury", "moderate_cellular_harm", "moderate_organ_impairment", "moderate_physiological_deterioration", "moderate_anatomical_destruction", "moderate_bodily_compromise", "moderate_system_damage", "moderate_structural_impairment", "moderate_health_complication", "moderate_organic_dysfunction", "moderate_biological_affliction", "moderate_somatic_impact", "moderate_bodily_lesion", "moderate_physiochemical_wound", "moderate_tissue_affection", "moderate_organ_malady", "moderate_pathological_injury", "moderate_anatomic_defect", "moderate_health_disturbance", "-1.3_visual_acuity", "corneal_edema", "corneal_swelling", "corneal_inflammation", "corneal_hydrops", "corneal_opacification", "corneal_clouding", "corneal_waterlogging", "corneal_fluid_accumulation", "corneal_fluid_swelling", "corneal_fluid_retention", "corneal_puffiness", "corneal_watery_swelling", "corneal_serous_swelling", "corneal_dropsy", "corneal_fluid_edema", "corneal_fogging", "corneal_mistiness", "corneal_haze", "corneal_fluid_hydration", "corneal_water_accumulation", "corneal_fluid_congestion", "comorbid_ocular_diseases", "concomitant_eye_conditions", "coexisting_visual_disorders", "simultaneous_ophthalmic_ailments", "parallel_optical_afflictions", "accompanying_sight_issues", "coexistent_eye_pathologies", "concurrent_visual_disruptions", "co-occurring_ocular_ailments", "conjoined_eye_diseases", "collateral_vision_disorders", "associated_ophthalmic_conditions", "interrelated_eye_disorders", "linked_optical_affections", "related_visual_pathologies", "combined_ocular_ailments", "co-linked_eye_issues", "interconnected_sight_disorders", "conjoined_visual_afflictions", "correlated_ocular_disorders", "coexistent_eye_ailments"]
+	},
+	{
+		"id": "2",
+		"age": null,
+		"gender": null,
+		"diagnoses": [
+			"pigmentary_glaucoma","15_mmhg_intraocular_pressure", "normal_visual_field", "20/50_visual_acuity", "macular_degeneration", "comorbid_ocular_diseases", "15_mmhg_intraocular_pressure", "fifteen_mmhg_iop", "15_millimeters_of_mercury_iop", "iop_of_15", "optimal_intraocular_pressure", "physiological_iop", "balanced_eye_pressure", "15_torr_iop", "15_mercury_units_iop", "iop_at_15_mmhg", "15_mmhg_ocular_pressure", "15_mmhg_intraocular_tension", "15_mercury_mmhg_iop", "normal_15_mmhg_iop", "standard_iop_of_15", "normal_visual_field", "typical_visual_field", "usual_visual_field", "common_visual_field", "standard_visual_field", "regular_visual_field", "expected_visual_field", "norm_visual_field", "standardized_visual_field", "average_visual_field", "conventional_visual_field", "20/50_visual_acuity", "visual_acuity_20_over_50", "20_divided_by_50_va", "20_per_50_visual_acuity", "visual_acuity_0.4", "va_0.4", "20_over_50_eyesight", "2/5_visual_acuity", "macular_degeneration", "macular_dystrophy", "macular_degeneration_disorder", "retinal_degeneration", "macula_deterioration", "macular_disease", "macular_deterioration_condition", "macular_degenerative_disorder", "retinal_dystrophy", "macula_degeneration", "retina_degenerative_condition", "macular_degenerative_condition", "retinal_degenerative_disease", "comorbid_ocular_diseases", "concurrent_eye_disorders", "simultaneous_ocular_conditions", "coexisting_eye_ailments", "concurrent_visual_disorders", "comorbid_eye_pathologies", "simultaneous_ocular_diseases", "concomitant_eye_issues", "coexisting_ophthalmic_diseases", "melanomaly_glaucoma", "melanin_glaucoma", "ocular_pigmentary_hypertension", "eye_color_glaucoma", "pigment_dispersion_syndrome_glaucoma", "iris_dispersion_glaucoma", "uveopigmentary_glaucoma", "melanosome_glaucoma", "ocular_melanin_hypertension", "iris_rub-off_glaucoma", "pigment_granule_glaucoma", "melanosomal_glaucoma", "iris_chafing_glaucoma", "melanocytic_glaucoma", "eye_pigmentary_hypertension", "uveomelanin_glaucoma", "melanosome_release_glaucoma", "iris_freckling_glaucoma", "ocular_pigment_granule_hypertension", "iris_transillumination_glaucoma"]
+	},
+	{
+		"id": "3",
+		"age": null,
+		"gender": null,
+		"diagnoses": [
+          "uveitic_glaucoma","28_mmhg_intraocular_pressure", "early_field_damage", "20/30_visual_acuity", "macular_edema", "comorbid_ocular_diseases","uveitic_glaucoma", "inflammatory_glaucoma", "iritic_glaucoma", "uveitis-associated_glaucoma", "secondary_glaucoma", "28_mmhg_intraocular_pressure", "28_mmhg_iop", "28_mmhg_ocular_pressure", "28_mmhg_intraocular_tension", "28_mmhg_eye_pressure", "early_field_damage", "initial_visual_field_impairment", "incipient_field_deterioration", "preliminary_visual_field_injury", "early_field_loss", "20/30_visual_acuity", "6/9_visual_acuity", "0.67_visual_acuity", "0.22_decimals_visual_acuity", "20/30_visual_performance", "macular_edema", "macular_swelling", "retinal_edema", "macular_inflammation", "macular_fluid_accumulation", "comorbid_ocular_diseases", "concurrent_eye_conditions", "coexisting_eye_disorders", "simultaneous_ocular_ailments", "combined_eye_pathologies"]
+	},
+	{
+		"id": "4",
+		"age": null,
+		"gender": null,
+		"diagnoses": [
+			"glaucoma","poag", "48_mmhg_intraocular_pressure", "advanced_glaucomatous_field_damage", "20/150_visual_acuity", "cartaract_surgery", "diabetic_retinopathy", "comorbid_ocular_diseases", "glaucoma", "ocular_hypertension", "optic_neuropathy", "increased_intraocular_pressure", "visual_field_loss", "primary_open-angle_glaucoma", "angle-closure_glaucoma", "secondary_glaucoma", "normal-tension_glaucoma", "chronic_angle-closure_glaucoma", "juvenile_glaucoma", "congenital_glaucoma", "neovascular_glaucoma", "pseudoexfoliation_glaucoma", "pigmentary_glaucoma", "uveitic_glaucoma", "infantile_glaucoma", "traumatic_glaucoma", "exfoliation_syndrome", "ocular_hypertension_syndrome", "chronic_simple_glaucoma", "high-tension_glaucoma", "ocular_hypertensive_syndrome", "ocular_hypertensive_state", "primary_glaucomatous_neuropathy", "glaucomatous_optic_neuropathy", "primary_angle-closure_glaucoma", "angle-closure_disease", "chronic_closured-angle_glaucoma", "chronic_simple_closured-angle_glaucoma", "48_mmhg_intraocular_pressure", "high_iop", "elevated_intraocular_pressure", "increased_intraocular_tension", "raised_iop", "advanced_glaucomatous_field_damage", "severe_visual_field_loss", "profound_field_defects", "late-stage_visual_impairment", "advanced_glaucomatous_optic_neuropathy", "20/150_visual_acuity", "poor_visual_acuity", "low_visual_resolution", "reduced_visual_performance", "limited_visual_discrimination", "cartaract_surgery", "cataract_extraction", "phacoemulsification", "lens_extraction", "intracapsular_cataract_extraction", "extracapsular_cataract_surgery", "diabetic_retinopathy", "diabetic_eye_disease", "retinal_microangiopathy", "diabetic_ocular_complications", "diabetic_macular_edema", "diabetic_vitreous_hemorrhage", "non-proliferative_diabetic_retinopathy", "proliferative_diabetic_retinopathy", "comorbid_ocular_diseases", "coexisting_eye_conditions", "simultaneous_ocular_afflictions", "concurrent_visual_disorders", "accompanying_eye_pathologies", "concomitant_eye_ailments"]
+	},
+	{
+		"id": "5",
+		"age": null,
+		"gender": null,
+		"diagnoses": [
+          "neovascular_glaucoma", "22_mmhg_intraocular_pressure", "normal_visual_field", "0.2_visual_acuity", "cartaract_surgery", "neovascular_glaucoma", "neovascular_angle_closure_glaucoma", "rubeotic_glaucoma", "angle_neovascularization_glaucoma", "secondary_neovascular_glaucoma", "22_mmhg_intraocular_pressure", "22mmhg_iop", "intraocular_pressure_of_22_millimeters_of_mercury", "22_mmhg_io_pressure", "ocular_pressure_at_22_mmhg", "normal_visual_field", "unimpaired_visual_field", "healthy_visual_field", "standard_visual_field", "typical_visual_field", "0.2_visual_acuity", "20/100_visual_acuity", "6/30_visual_acuity", "low_visual_acuity", "poor_visual_acuity", "cartaract_surgery", "lens_op", "phacoemulsification", "cataract_extraction", "cataract_removal"]
+	},
+	{
+		"id": "6",
+		"age": 39,
+		"gender": null,
+		"diagnoses": [
+			"anxiety","6_ssasi", "20_ham-a", "7_phq-9", "23_hamd-d", "suicidal_ideation", "anxiety", "worry", "apprehension", "nervousness", "tension", "unease", "fear", "dread", "concern", "jitters","6_ssasi", "severity_score_anxiety", "anxiety_intensity", "anxiety_severity", "anxiety_scale", "anxiety_assessment", "anxiety_measure", "anxiety_index", "anxiety_rating", "anxiety_level","20_ham-a", "hamilton_anxiety_scale", "anxiety_rating_scale", "hamilton_anxiety_rating", "anxiety_assessment_20", "ham-a_scale", "hamilton_anxiety_measurement", "anxiety_severity_20", "hamilton_anxiety_index", "ham-a_score","7_phq-9", "patient_health_questionnaire_9", "phq9_scale", "phq-9_assessment", "phq9_score", "phq9_evaluation", "phq9_measure", "depression_phq9", "phq9_index", "phq9_severity","23_hamd-d", "hamilton_depression_scale_23", "hamd-d_measurement", "hamd-d_scale", "hamd-d_evaluation", "depression_severity_23", "hamd-d_index", "hamd-d_score", "depression_hamd-d", "hamilton_depression_23","suicidal_ideation", "suicidal_thoughts", "self-destructive_ideation", "suicidal_tendencies", "suicidal_urges", "self-harm_contemplation", "suicide_concept", "self-injury_ideation", "suicidal_mindset", "self-inflicted_harm_ideation"
+        ]
+	},
+	{
+		"id": "7",
+		"age": 25,
+		"gender": null,
+		"diagnoses": [
+			"anxiety","18_phq-9", "23_hamd-d", "20_gad-7", "12_beck_depression_inventory", "suicidal_ideation", "apprehension", "nervousness", "tension", "worry", "unease", "disquiet", "concern", "fear", "agitation", "distress", "nervous_trepidation", "jitters", "angst", "restlessness", "edginess", "consternation", "alarm", "panic", "severity_of_depressive_symptoms", "depressive_disorder", "low_mood", "sadness", "hopelessness", "despair", "guilt", "worthlessness", "fatigue", "loss_of_interest", "difficulty_concentrating", "insomnia", "appetite_changes", "psychomotor_agitation", "suicidal_thoughts", "excessive_worry", "persistent_anxiety", "excessive_fear", "irritability", "restlessness", "muscle_tension", "sleep_disturbances", "difficulty_concentrating", "fatigue", "easily_startled", "panic_attacks", "avoidance_behavior", "emotional_distress", "cognitive_symptoms", "negative_thoughts", "hopelessness", "self-critical_thoughts", "loss_of_interest", "irritability", "crying_spells", "appetite_changes", "weight_changes", "social_isolation", "unexplained_pain", "suicidal_thoughts", "self-destructive_thoughts", "self-harm_ideation", "suicidal_tendencies", "self-inflicted_harm_contemplation", "self-annihilation_propensity", "self-extinction_thoughts", "self-obliteration_ideation", "self-murder_conception", "self-elimination_contemplation", "self-destruction_propensity"]
+	},
+	{
+		"id": "8",
+		"age": 12,
+		"gender": null,
+		"diagnoses": [
+          "anxiety","12_ssasi", "25_ham-a", "14_hamd-d", "apprehension","unease","nervousness","trepidation","worry","fear","disquiet","concern","restlessness","agitation", "tension","stress","angst","jitters","edginess","panic","dread","alarm","consternation","perturbation","foreboding", "uneasiness","panic_attack","nervous_tension","disquietude","alarm","trembling","palpitations","heart_palpitations", "stress","worrying","nervous","tense","fidgety","jumpy","anxious","agitated","restless","fearful", "concerned","apprehensive","worried","edgy","panicky","distressed","nervy","uptight","unsettled","terrified"]
+	},
+	{
+        "id": "9",
+        "age": "adult",
+        "gender": null,
+        "diagnoses": [
+            "anxiety","18_ham-a", "22_phq-9", "24_hamd-d", "12_gad-7", "suicidal_ideation", "anxiety", "apprehension", "nervousness", "trepidation", "unease", "worry", "fretfulness", "agitation", "disquiet", "restlessness", "jitters", "concern", "fear", "dread", "panic", "angst", "tension", "stress", "18_ham-a", "18-point_hamilton_anxiety_rating_scale", "22_phq-9", "22-item_patient_health_questionnaire", "24_hamd-d", "24-item_hamilton_depression_rating_scale_depressed_mood_item", "12_gad-7", "12-item_generalized_anxiety_disorder_7_item_scale", "suicidal_ideation", "self-destructive_thoughts", "suicidal_thoughts", "self-harm_contemplation", "suicidal_tendencies", "self-inflicted_harm_ideation"]
+    },
+	{
+        "id": "10",
+        "age": 58,
+        "gender": null,                                                                                                           
+        "diagnoses": [                                                                                                            
+            "12_ham-a", "19_hamd-d", "9_gad-7", "8_beck_depression_inventory", "dementia", "12_ham-a", "19_hamd-d", "9_gad-7", "8_beck_depression_inventory", "dementia", "anxiety_scale", "hamilton_anxiety_scale", "ham-a_scale", "hamilton_anxiety_rating_scale", "ham-a_rating_scale", "hamd-d", "hamilton_depression_scale", "ham-d_scale", "hamilton_depression_rating_scale", "ham-d_rating_scale", "gad-7", "general_anxiety_disorder_7", "gad_7_item_scale", "gad_7_questionnaire", "gad_7_assessment", "beck_depression_inventory", "bdi", "beck_depression_scale", "bdi-ii", "beck_depression_questionnaire", "cognitive_impairment", "cognitive_dysfunction", "mental_deterioration", "cognitive_decline", "cognitive_deficit", "neurocognitive_disorder", "ncd", "cognitive_impairment", "cognitive_dysfunction", "cognitive_decline", "cognitive_deficit", "dementia", "senility", "cognitive_impairment", "neurocognitive_disorder", "ncd", "memory_loss", "amnesia", "forgetfulness", "memory_impairment", "cognitive_dysfunction", "cognitive_dysfunction", "cognitive_impairment", "neurocognitive_disorder", "cognitive_decline", "cognitive_deficit", "neurocognitive_disorder", "cognitive_impairment", "cognitive_dysfunction", "cognitive_decline", "cognitive_deficit", "alzheimer's_disease", "ad", "senile_dementia", "alzheimer_disease", "presenile_dementia", "vascular_dementia", "multi-infarct_dementia", "post-stroke_dementia", "cerebrovascular_dementia", "vascular_cognitive_impairment", "lewy_body_dementia", "lbd", "dementia_with_lewy_bodies", "lewy_dementia", "diffuse_lewy_body_disease", "frontotemporal_dementia", "ftd", "frontotemporal_lobe_dementia", "pick's_disease", "semantic_dementia", "huntington's_disease", "hd", "huntington's_chorea", "chorea_major", "huntington's", "parkinson's_disease_dementia", "pdd", "parkinson's_dementia", "parkinsonian_dementia", "parkinson_dementia_complex", "mild_cognitive_impairment", "mci", "cognitive_impairment_no_dementia", "cind", "amnestic_mild_cognitive_impairment", "mixed_dementia", "multi-etiology_dementia", "combined_dementia", "dual-pathology_dementia", "dementia_with_lewy_bodies", "progressive_supranuclear_palsy", "psp", "steele-richardson-olszewski_syndrome", "nuchal_dystonia", "parkinsonism", "normal_pressure_hydrocephalus", "nph", "communicating_hydrocephalus", "chronic_hydrocephalus", "hydrocephalus_ex_vacuo", "wernicke-korsakoff_syndrome", "alcoholic_encephalopathy", "alcoholic_amnestic_disorder", "wernicke's_encephalopathy", "korsakoff's_psychosis", "vascular_cognitive_impairment", "vascular_neurocognitive_disorder", "vascular_neurocognitive_dysfunction", "cerebrovascular_cognitive_impairment", "vascular_dementia", "primary_progressive_aphasia", "ppa", "non-fluent_variant_ppa", "semantic_variant_ppa", "logopenic_variant_ppa", "posterior_cortical_atrophy", "pca", "benson's_syndrome", "visual_variant_of_alzheimer's_disease", "visual_alzheimer's", "creutzfeldt-jakob_disease", "cjd", "sporadic_cjd", "variant_cjd", "familial_cjd", "normal_memory_aging", "age-related_cognitive_decline", "senescence-related_cognitive_decline", "benign_senescent_forgetfulness", "age-associated_memory_impairment", "delirium", "acute_confusional_state", "delirium_tremens", "toxic_metabolic_encephalopathy", "acute_brain_syndrome", "catatonia", "catatonic_disorder", "catatonic_state", "stupor", "motor_retardation", "agitation", "psychomotor_agitation", "restlessness", "physical_restlessness", "psychomotor_excess", "akathisia", "subjective_restlessness", "inner_restlessness", "inability_to_sit_still", "motor_restlessness", "psychomotor_retardation", "psychomotor_impairment", "motor_slowing", "bradykinesia", "akinesia", "anhedonia", "loss_of_interest", "lack_of_pleasure", "emotional_flatness", "reduced_positive_affect", "anhedonia", "lack_of_enjoyment", "loss_of_interest", "pleasure_avoidance", "emotional_blunting", "anhedonia", "inability_to_experience_pleasure", "pleasure_deficit", "pleasure_impairment", "emotional_flattening", "hypersomnia", "excessive_sleepiness", "sleeping_too_much", "hypersomnolence", "prolonged_sleep", "insomnia", "sleeplessness", "difficulty_falling_asleep", "difficulty_staying_asleep", "poor_sleep_quality", "psychomotor_agitation", "psychomotor_excitement", "psychomotor_activation", "motor_agitation", "motor_excitement", "psychomotor_retardation", "motor_slowing", "bradykinesia", "sluggishness", "motor_impairment", "psychomotor_retardation", "psychomotor_slowing", "bradykinesia", "motor_impairment", "motor_delay", "psychosis", "psychotic_symptoms", "hallucinations", "delusions", "schizophrenia", "psychosis", "psychotic_features", "hallucinations", "delusions", "psychotic_disorder", "psychosis", "psychotic_state", "hallucinations", "delusions", "impaired_reality_testing", "hallucinations", "auditory_hallucinations", "visual_hallucinations", "sensory_hallucinations", "perceptual_disturbances", "delusions", "persecutory_delusions", "grandiose_delusions", "paranoid_delusions", "bizarre_delusions", "delusions", "false_beliefs", "misbeliefs", "cognitive_distortions", "irrational_beliefs", "delusions", "fixed_beliefs", "unshakable_beliefs", "false_certainty", "inflexible_beliefs", "anhedonia", "pleasure_loss", "lack_of_joy", "inability_to_feel_pleasure", "reduced_positive_affect", "anhedonia", "loss_of_pleasure", "pleasure_impairment", "pleasure_deficit", "emotional_flattening", "anhedonia", "absence_of_pleasure", "pleasure_incapacity", "lack_of_enjoyment", "emotional_flatness", "anhedonia", "lack_of_joy", "absence_of_pleasure", "inability_to_experience_pleasure", "pleasure_deficiency", "anhedonia", "inability_to_feel_pleasure", "pleasure_loss", "lack_of_enjoyment", "reduced_positive_affect", "anhedonia", "pleasure_avolition", "inability_to_feel_pleasure", "pleasure_loss", "lack_of_enjoyment", "anhedonia", "inability_to_experience_pleasure", "pleasure_avoidance", "pleasure_impairment", "reduced_positive_affect", "insomnia", "sleeplessness", "sleep_disturbance", "difficulty_falling_asleep", "difficulty_staying_asleep", "insomnia", "sleeping_problems", "sleep_difficulty", "poor_sleep", "sleep_disruption", "insomnia", "difficulty_initiating_sleep", "trouble_falling_asleep", "sleep_onset_difficulty", "delayed_sleep_onset", "insomnia", "trouble_staying_asleep", "frequent_awakenings", "nighttime_awakenings", "sleep_maintenance_difficulty", "insomnia", "poor_sleep_quality", "fragmented_sleep", "non-restorative_sleep", "unrefreshing_sleep", "agitation", "restlessness", "inner_tension", "nervousness", "psychomotor_agitation", "agitation", "restlessness", "motor_agitation", "psychomotor_excitement", "nervous_tension", "agitation", "motor_restlessness", "psychomotor_agitation", "restlessness", "physical_restlessness", "agitation", "emotional_agitation", "psychomotor_agitation", "inner_tension", "restlessness", "akathisia", "motor_restlessness", "subjective_restlessness", "inner_tension", "inability_to_remain_still"
+        ]
+    },
+	{
+        "id": "11",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "copd","85%_fev1", "iii_gold_stage", "3_exacerbations_in_past_year", "copd_treatments", "bronchodilator", "steroids", "former_smoker", "lung_comorbidities", "interstitial_lung_disease", "hypertension", "chronic_obstructive_pulmonary_disease", "85_percent_fev1", "iii_gold_stage", "3_exacerbations_in_past_year", "copd_treatments", "bronchodilator", "steroids", "ex-smoker", "pulmonary_comorbidities", "interstitial_lung_disease", "high_blood_pressure"]
+    },
+	{
+        "id": "12",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "copd","50%_fev1", "ii_gold_stage", "2_exacerbations_in_last_month", "lung_comorbidities", "asthma", "chronic_obstructive_pulmonary_disease", "50_percent_fev1", "ii_gold_stage", "2_exacerbations_in_last_month", "lung_comorbidities", "bronchial_asthma", "obstructive_airway_disease", "half_fev1", "stage_2_gold", "two_exacerbations_last_month", "respiratory_comorbidities", "pulmonary_asthma", "copd", "50_fev1", "gold_stage_ii", "2_exacerbations_last_30_days", "pulmonary_co-morbidities", "chronic_airway_obstruction", "50_percent_forced_expiratory_volume_1", "gold_stage_2", "two_exacerbations_in_past_month", "respiratory_co-morbidities", "bronchiolar_asthma", "persistent_obstructive_pulmonary_disease", "50_fev1_percentage", "stage_two_gold", "2_exacerbations_recently", "lung_disease_comorbidities", "airway_hyperresponsiveness", "bronchospastic_asthma", "emphysema", "copd_condition", "half_forced_expiratory_volume_1", "gold_stage_two", "two_exacerbations_last_4_weeks", "pulmonary_conditions_with_comorbidities", "airflow_limitation", "chronic_airflow_obstruction", "chronic_irreversible_airflow_obstruction", "50_percent_of_fev1", "gold_stage_ii_condition", "two_exacerbations_past_30_days", "lung_disease_co-morbidities", "airway_narrowing", "bronchoconstrictive_asthma", "chronic_obstructive_lung_disease", "reduced_fev1", "stage_2_gold_condition", "two_exacerbations_recent_month", "pulmonary_disease_comorbidities", "respiratory_hyperreactivity", "bronchial_spasticity", "obstructed_airflow_condition", "copd_illness", "50_fev1_percent", "gold_stage_two_condition", "two_exacerbations_last_month", "lung_dysfunction_comorbidities", "airway_obstruction", "asthmatic_condition"]
+    },
+	{
+        "id": "13",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "copd","65%_fev1", "iv_gold_stage", "8_exacerbations_in_past_year", "copd_treatments", "evb", "pulmonary_rehab", "smoker", "lung_cancer", "interstitial_lung_disease", "copd", "chronic_obstructive_pulmonary_disease", "emphysema", "chronic_bronchitis", "lung_condition", "respiratory_condition", "obstructive_lung_disease", "airflow_limitation", "pulmonary_obstruction", "lung_problem", "65%_fev1", "sixty_five_percent_fev1", "forced_expiratory_volume_1", "lung_function_measurement", "spirometry_result", "fev1_percentage", "pulmonary_capacity_measurement", "airflow_rate_percent", "iv_gold_stage", "stage_iv_gold", "gold_classification_iv", "severe_copd_stage", "advanced_copd", "copd_severity_stage_iv", "stage_iv_respiratory_condition", "stage_iv_airflow_limitation", "late_stage_copd", "8_exacerbations_in_past_year", "eight_flare-ups_last_year", "frequent_exacerbations", "multiple_exacerbations", "recurrent_flare-ups", "repeated_respiratory_crises", "numerous_exacerbations", "many_flare-ups", "copd_treatments", "chronic_obstructive_pulmonary_disease_therapies", "lung_condition_management", "respiratory_interventions", "obstructive_lung_disease_care", "pulmonary_disease_treatments", "breathing_therapies", "evb", "exacerbation_volume_biomarker", "flares_indicator", "lung_disease_activity_marker", "respiratory_aggravation_measure", "pulmonary_crisis_indicator", "exacerbation_severity_marker", "flare-ups_meter", "pulmonary_worsening_indicator", "pulmonary_rehab", "respiratory_rehabilitation", "lung_condition_recovery_program", "pulmonary_exercise_rehab", "breathing_therapy_rehab", "respiratory_condition_training", "lung_function_improvement_program", "smoker", "tobacco_user", "cigarette_consumer", "nicotine_inhaler", "tobacco_product_user", "cigarette_smoker", "nicotine_addict", "tobacco_inhalation_practitioner", "tobacco_enthusiast", "lung_cancer", "pulmonary_carcinoma", "respiratory_neoplasm", "bronchogenic_cancer", "lung_tumor", "pulmonary_malignancy", "respiratory_carcinoma", "bronchial_cancer", "lung_growth_abnormality", "interstitial_lung_disease", "pulmonary_interstitium_disorder", "lung_tissue_condition", "interstitial_respiratory_condition", "lung_connective_tissue_disease", "pulmonary_fibrosis", "respiratory_interstitial_abnormality", "lung_tissue_inflammation", "pulmonary_interstitium_infection"]
+    },
+	{
+        "id": "14",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "copd","72%_fev1", "ii_gold_stage", "1_exacerbation_in_last_2_weeks", "copd_treatments", "steroids", "glaucoma", "chronic_obstructive_pulmonary_disease", "obstructive_airway_disease", "emphysema", "chronic_bronchitis", "respiratory_condition", "72_percent_fev1", "fev1_at_72_percent", "forced_expiratory_volume_in_1_second_at_72_percent", "airflow_limitation", "stage_ii_gold", "gold_stage_2", "moderate_copd_stage", "stage_2_chronic_obstructive_pulmonary_disease", "one_exacerbation_in_last_two_weeks", "single_exacerbation_in_previous_14_days", "acute_respiratory_deterioration_within_recent_fortnight", "copd_therapies", "chronic_obstructive_pulmonary_disease_treatments", "lung_disease_management_strategies", "respiratory_interventions", "corticosteroids", "glucocorticoids", "anti-inflammatory_medications", "adrenal_cortex_hormones", "steroidal_medications", "ocular_hypertension", "increased_intraocular_pressure", "eye_condition_with_elevated_iop", "optic_nerve_damage_risk"]
+    },
+	{
+        "id": "15",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "copd","55%_fev1", "early_gold_stage", "chronic_obstructive_pulmonary_disease", "copd", "obstructive_lung_disease", "chronic_airflow_limitation", "respiratory_obstruction", "55_percent_fev1", "forced_expiratory_volume_at_55_percent", "airflow_limitation_at_55_percent", "fev1_at_55_percent", "early_gold_stage", "stage_i_gold", "gold_stage_1", "mild_gold_stage", "gold_1"]
+    },
+	{
+        "id": "16",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "breast_cancer", "ecog_1", "mammary_carcinoma", "ductal_carcinoma_in_situ", "lobular_carcinoma", "inflammatory_breast_cancer", "triple_negative_breast_cancer", "her2_positive_breast_cancer", "ductal_carcinoma", "invasive_ductal_carcinoma", "invasive_lobular_carcinoma", "adenocarcinoma_of_the_breast", "performance_status_1", "ps_1", "fully_active", "ambulatory", "restricted_in_physically_strenuous_activity", "able_to_carry_out_light_work", "up_and_about_more_than_50_of_waking_hours", "limited_in_physically_strenuous_activity_but_ambulatory"]
+    },
+	{
+        "id": "17",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "stage_iii_breast_cancer","er+", "pr-", "neoadjuvant_chemotherapy", "stereotactic_radiotherapy", "prior_mastectomy", "ecog_2", "neoadjuvant_chemotherapy", "stage_iii_breast_cancer", "locally_advanced_breast_cancer", "advanced_breast_cancer", "breast_cancer_stage_iii", "breast_cancer_stage_3", "breast_cancer_third_stage", "breast_cancer_advancing_to_stage_iii", "breast_cancer_in_stage_iii", "breast_tumor_stage_iii", "breast_tumor_stage_3", "breast_tumor_third_stage", "breast_tumor_advancing_to_stage_iii", "er_positive", "estrogen_receptor_positive", "er_pos", "er+", "er_positive_breast_cancer", "estrogen_receptor_positive_breast_cancer", "progesterone_receptor_negative", "pr_receptor_negative", "pr_neg", "pr-", "pr_negative_breast_cancer", "progesterone_receptor_deficient_breast_cancer", "neoadjuvant_chemotherapy", "preoperative_chemotherapy", "induction_chemotherapy", "preoperative_tx", "neoadjuvant_tx", "presurgical_chemotherapy", "stereotactic_radiotherapy", "stereotactic_radiosurgery", "stereotactic_radiation_therapy", "srs", "srt", "prior_mastectomy", "previous_mastectomy", "mastectomy_previously_done", "mastectomy_performed_before", "mastectomy_before_current_treatment", "ecog_2", "ecog_performance_status_2", "ecog_ps_2", "ecog_score_2", "ecog_grade_2", "ecog_level_2", "neoadjuvant_chemotherapy", "preoperative_chemo", "induction_chemo", "preoperative_therapy_before_surgery", "presurgical_chemo", "stage_iii_breast_cancer", "locally_advanced_breast_cancer", "advanced_breast_cancer", "breast_cancer_stage_iii", "breast_cancer_stage_3", "breast_cancer_third_stage", "breast_cancer_advancing_to_stage_iii", "breast_cancer_in_stage_iii", "breast_tumor_stage_iii", "breast_tumor_stage_3", "breast_tumor_third_stage", "breast_tumor_advancing_to_stage_iii", "er_positive", "estrogen_receptor_positive", "er_pos", "er+", "er_positive_breast_cancer", "estrogen_receptor_positive_breast_cancer", "progesterone_receptor_negative", "pr_receptor_negative", "pr_neg", "pr-", "pr_negative_breast_cancer", "progesterone_receptor_deficient_breast_cancer", "neoadjuvant_chemotherapy", "preoperative_chemotherapy", "induction_chemotherapy", "preoperative_tx", "neoadjuvant_tx", "presurgical_chemotherapy", "stereotactic_radiotherapy", "stereotactic_radiosurgery", "stereotactic_radiation_therapy", "srs", "srt", "prior_mastectomy", "previous_mastectomy", "mastectomy_previously_done", "mastectomy_performed_before", "mastectomy_before_current_treatment", "ecog_2", "ecog_performance_status_2", "ecog_ps_2", "ecog_score_2", "ecog_grade_2", "ecog_level_2", "neoadjuvant_chemotherapy", "preoperative_chemo", "induction_chemo", "preoperative_therapy_before_surgery", "presurgical_chemo"]
+    },
+	{
+        "id": "18",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "stage_ii_breast_cancer","her2", "er-", "pr-", "radiotherapy", "karnofsky_70%", "stage_ii_breast_cancer", "stage_2_breast_carcinoma", "grade_ii_breast_neoplasm", "ii_stage_mammary_cancer", "breast_tumor_stage_two", "her2", "human_epidermal_growth_factor_receptor_2", "erbb2_oncogene", "neu_protein", "her2_neu", "er-", "estrogen_receptor_negative", "er_nonexpressing", "er_deficient", "estrogen_receptor_nonreactive", "pr-", "progesterone_receptor_negative", "pr_nonexpressing", "pr_deficient", "progesterone_receptor_nonreactive", "radiotherapy", "radiation_therapy", "irradiation", "x-ray_treatment", "radiation_oncology", "karnofsky_70%", "karnofsky_performance_score_70", "kps_70", "karnofsky_index_70", "karnofsky_scale_seventy"]
+    },
+	{
+        "id": "19",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "stage_iv_breast_cancer","her2", "pr+", "chemotherapy", "radiotherapy", "mastectomy", "karnofsky_50%", "neoadjuvant_chemotherapy", "ecog-3", "stage_iv_breast_cancer", "advanced_breast_carcinoma", "metastatic_breast_neoplasm","her2", "human_epidermal_growth_factor_receptor_2", "erbb2","pr+", "progesterone_receptor_positive", "pr_overexpressing","chemotherapy", "chemo", "cytotoxic_therapy","radiotherapy", "radiation_therapy", "x-ray_treatment","mastectomy", "breast_removal_surgery", "complete_breast_excision","karnofsky_50%", "karnofsky_performance_status_50", "kps_50","neoadjuvant_chemotherapy", "preoperative_cytotoxic_therapy", "primary_tumor_shrinking_chemo","ecog-3", "eastern_cooperative_oncology_group_3", "performance_status_3"]
+    },
+	{
+        "id": "20",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "breast_cancer", "ecog_1", "mammary_carcinoma", "ductal_carcinoma_in_situ", "invasive_ductal_carcinoma", "lobular_carcinoma", "triple_negative_breast_cancer", "her2_positive_breast_cancer", "eastern_cooperative_oncology_group_1", "performance_status_1", "ecog_performance_status_1", "ps_1", "ecog_grade_1"]
+    },
+	{
+        "id": "21",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "covid-19","fever", "muscle_pain", "shortness_of_breath", "1_shot_mrna", "95%_oxygen_saturation", "comorbid_respiratory_diseases", "asthma", "hospitalized", "covid-19","fever", "muscle_pain", "shortness_of_breath", "1_shot_mrna", "95%_oxygen_saturation", "comorbid_respiratory_diseases", "asthma", "hospitalized", "coronavirus_disease_2019", "pyrexia", "myalgia", "dyspnea", "first_dose_messenger_rna", "oxygen_saturation_95_percent", "concurrent_respiratory_conditions", "bronchial_asthma", "admitted_to_the_hospital"]
+    },
+	{
+        "id": "22",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "covid-19","fever", "headache", "body_pains", "unvaccinated", "96%_oxygen_saturation", "comorbid_respiratory_diseases", "bronchiectasis", "hospitalized", "covid-19", "coronavirus_disease_2019", "fever", "pyrexia", "headache", "cephalalgia", "body_pains", "myalgia", "unvaccinated", "non_vaccinated", "96%_oxygen_saturation", "96%_spo2", "comorbid_respiratory_diseases", "coexisting_respiratory_conditions", "bronchiectasis", "dilated_bronchi", "hospitalized", "admitted_to_hospital"]
+    },
+	{
+        "id": "23",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "covid-19","fever", "muscle_pain", "2_shot_+_booster", "97%_oxygen_saturation", "covid_19", "coronavirus_disease_2019", "febrile_illness", "pyrexia", "hyperthermia", "muscle_ache", "myalgia", "muscle_soreness", "2_dose_+additional_dose", "double_vaccination+_reinforcement", "97%_oxygen_saturation", "o2_saturation_97_percent"]
+    },
+	{
+        "id": "24",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "covid-19","headache", "fatigue", "unvaccinated", "98%_oxygen_saturation", "comorbid_respiratory_diseases", "asthma", "sars-cov-2_infection", "cephalalgia", "lassitude", "non-immunized", "oxygen_saturation_of_98_percent", "concurrent_respiratory_conditions", "bronchial_asthma", "sars_cov_2_infection", "cephalalgia", "tiredness", "non_vaxxed", "98%_o2_sat", "coexisting_lung_conditions", "bronchial_inflammation"]
+    },
+	{
+        "id": "25",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "covid-19","headache", "unvaccinated", "covid_19", "coronavirus_disease_2019", "sars_cov_2_infection", "novel_coronavirus_infection", "coronavirus_respiratory_infection", "cephalalgia", "migraine", "cranial_pain", "head_pain", "cephalea", "cephalodynia", "cranial_distress", "cranial_discomfort", "cephalic_ache", "migraine_headache", "head_discomfort", "not_vaccinated", "non_vaccinated", "not_immunized", "unprotected", "without_vaccine", "vaccineless", "lacking_vaccination", "not_inoculated", "vaccine_naive", "not_shot", "vaccine_free"]
+    },
+	{
+        "id": "26",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "rheumatoid_arthritis","active_dmard_treatment", "methotrexate", "ibuprofen", "ra_medication", "swollen_joints", "comorbidities", "hypertension", "rheumatoid_arthritis", "inflammatory_arthritis", "ra", "rheumatic_arthritis", "polyarthritis", "active_dmard_treatment", "disease-modifying_antirheumatic_drug_therapy", "ongoing_dmard_therapy", "continuing_dmard_treatment", "persistent_dmard_medication", "methotrexate", "mtx", "amethopterin", "rheumatrex", "trexall", "ibuprofen", "nsaid", "nonsteroidal_anti-inflammatory_drug", "ibuprofen_sodium", "advil", "ra_medication", "rheumatoid_arthritis_drug", "arthritis_medication", "anti-ra_medication", "disease-modifying_medication", "swollen_joints", "joint_swelling", "inflamed_joints", "enlarged_joints", "swelling_in_the_joints", "comorbidities", "concurrent_conditions", "coexisting_ailments", "associated_disorders", "multiple_health_issues", "hypertension", "high_blood_pressure", "elevated_blood_pressure", "arterial_hypertension", "systemic_hypertension"]
+    },
+	{
+        "id": "27",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "rheumatoid_arthritis","prior_dmard_treatment", "hydroxychloroquine", "prednisone", "ra_medication", "swollen_joints", "tender_joints", "4_das-28_crp", "rheumatoid_arthritis", "prior_dmard_treatment", "hydroxychloroquine", "prednisone", "ra_medication", "swollen_joints", "tender_joints", "4_das-28_crp", "ra", "early_arthritis", "inflammatory_joint_disease", "rheumatic_arthritis", "polyarthritis", "prior_disease_modifying_antirheumatic_drug_treatment", "previous_dmard_therapy", "dmards", "disease_modifying_agents", "disease_modifying_therapies", "anti-rheumatic_medications", "antimalarial_drug", "plaquenil", "corticosteroid", "glucocorticoid", "steroid_medication", "ra_drug", "articular_swelling", "joint_swelling", "enlarged_joints", "inflamed_joints", "joint_inflammation", "joint_tenderness", "painful_joints", "sore_joints", "sensitive_joints", "tenderness_in_joints", "das-28_crp", "disease_activity_score_28_crp", "das28", "ra_activity_score"]
+    },
+	{
+        "id": "28",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "rheumatoid_arthritis","active_dmard_treatment", "anti-tnf_therapy", "prior_dmard_treatment", "methotrexate", "naproxen", "ra_medication", "swollen_joints", "tender_joints", "past_tuberculosis", "rheumatoid_arthritis", "active_dmard_treatment", "anti-tnf_therapy", "prior_dmard_treatment", "methotrexate", "naproxen", "ra_medication", "swollen_joints", "tender_joints", "past_tuberculosis", "ra", "inflammatory_joint_disease", "rheumatic_arthritis", "juvenile_arthritis", "ra_symptoms", "ra_management", "joint_inflammation", "joint_swelling", "joint_pain", "autoimmune_arthritis", "joint_stiffness", "disease_modifying_antirheumatic_drug", "tnf_inhibitor", "immunotherapy", "prior_dmard_therapy", "previously_treated_dmard", "folic_acid", "disease_activity_score", "inflammation_markers", "rheumatoid_factor", "erythrocyte_sedimentation_rate", "anti-inflammatory_drugs", "corticosteroids", "disease_progression", "immune_system_response", "biologic_therapy", "rheumatologist", "joint_deformity", "joint_mobility", "immunosuppressive_agents", "pain_management", "immune_modulators", "joint_affectation", "synovial_fluid_analysis", "radiographic_evidence", "joint_errosion", "autoimmune_disease", "granulomatous_disease", "tubercular_history"]
+    },
+	{
+        "id": "29",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "rheumatoid_arthritis","active_dmard_treatment", "hydroxychloroquine", "ibuprofen", "ra_medication", "tender_joints", "5.5_das-28_crp", "comorbidities", "diabetes", "rheumatoid_arthritis","active_dmard_treatment","hydroxychloroquine","ibuprofen","ra_medication", "tender_joints","5.5_das-28_crp","comorbidities","diabetes", "ra","inflammatory_joint_condition","dmards","disease-modifying_antirheumatic_drugs","methotrexate", "sulfasalazine","leflunomide","tumor_necrosis_factor_inhibitors","tnf_inhibitors","biologics", "disease_activity_score","clinical_remission","antirheumatic_medication","pain_relief_medication","nonsteroidal_anti-inflammatory_drugs", "nsaids","symptomatic_relief","swollen_joints","inflammation_management","disease_progression", "systemic_autoimmune_condition","autoimmune_arthritis","joint_swelling","inflammation_suppression","pain_management", "immune_system_modulation","immunomodulators","inflammatory_disease","cyclooxygenase_inhibitors","cox_inhibitors", "disease_modification","rheumatic_disease","inflammation_control","das28_crp","clinical_disease_activity_index", "associated_conditions","concurrent_health_issues","other_illnesses","related_medical_conditions","coexisting_diseases", "chronic_condition","insulin_resistance","metabolic_disorder"]
+    },
+	{
+        "id": "30",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "rheumatoid_arthritis","active_dmard_treatment", "anti-tnf_therapy", "rheumatoid_arthritis","active_dmard_treatment","anti-tnf_therapy", "inflammatory_joint_condition","ongoing_dmard_therapy","tumor_necrosis_factor_inhibitor", "ra","current_dmard_management","tnf_blockade", "rheumatic_arthritis","dmards_in_action","tnf_inhibitor_therapy", "chronic_inflammatory_arthritis","dmard_regimen_ongoing","anti-tumor_necrosis_factor_therapy", "ra_condition","dmard_therapeutic_approach","anti-tnf_treatment", "joint_inflammation","dmard_protocol_engaged","tnf_alpha_inhibitor_therapy", "active_rheumatic_arthritis","dmard_course_continuing","tnf_blocker_therapy", "inflammatory_joint_disease","dmard_program_ongoing","tumor_necrosis_factor_antagonist_therapy", "rheumatism","dmard_scheme_activated","anti-tnf_regimen", "rheumatoid_joint_inflammation","dmard_ongoing_regimen","tnf_inhibitor_therapeutic_approach", "active_inflammatory_arthritis","dmard_treatment_in_progress","tnf_suppression_therapy", "ra_inflammation","dmard_therapy_continuing","anti-tnf_approach", "autoimmune_arthritis","dmard_course_activated","tumor_necrosis_factor_blockade", "rheumatoid_inflammation","dmard_protocol_continuing","tnf_inhibitor_approach", "chronic_joint_inflammation","dmard_regimen_engaged","anti-tnf_agent_therapy", "rheumatoid_arthritic_condition","dmard_therapeutic_scheme","tnf_inhibitor_treatment", "inflammatory_rheumatoid_arthritis","active_dmard_approach","anti-tnf_modality", "ra_inflammatory_condition","ongoing_dmard_program","tnf_inhibition_therapy", "autoimmune_joint_inflammation","dmard_treatment_protocol","tumor_necrosis_factor_inhibition", "rheumatic_arthritic_inflammation","dmard_management_continuing","tnf_blocker_approach", "active_ra","dmard_therapy_ongoing","anti-tnf_therapeutic_scheme", "chronic_inflammatory_rheumatoid_arthritis","dmard_course_ongoing","tnf_suppressor_therapy", "ra_inflammatory_response","dmard_protocol_activated","anti-tnf_regimen", "autoimmune_arthritic_inflammation","ongoing_dmard_scheme","tumor_necrosis_factor_modulation", "rheumatoid_joint_condition","dmard_approach_continuing","tnf_inhibitor_modality", "inflammatory_arthritic_condition","dmard_ongoing_approach","anti-tnf_agent_treatment", "chronic_rheumatoid_arthritis","dmard_treatment_continuing","tnf_inhibitor_regimen", "ra_inflammatory_disease","dmard_program_continuing","tumor_necrosis_factor_blocker_therapy", "autoimmune_joint_condition","dmard_regimen_continuing","tnf_inhibitory_therapy"]
+    },
+	{
+        "id": "31",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "sickle_cell_anemia","blood_transfusion", "5.8_g/dl_hemoglobin", "vaso_occlusive_crisis", "sickle_cell_anemia", "drepanocytic_anemia", "hemoglobin_ss_disease", "hemoglobinopathy_s", "sickle_cell_disease", "scd", "blood_transfusion", "transfusion_of_blood", "blood_infusion", "blood_transplantation", "sangui_transfusion", "5.8_g/dl_hemoglobin", "hemoglobin_level_of_5.8_g/dl", "5.8_grams_per_deciliter_hemoglobin", "5.8_g/dl_hb", "hb_of_5.8", "vaso_occlusive_crisis", "painful_vaso-occlusive_episode", "voc", "pain_crisis", "sickle_cell_crisis"]
+    },
+	{
+        "id": "32",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "sickle_cell_anemia","8.7_g/dl_hemoglobin", "vaso_occlusive_crisis", "stroke", "sickle_cell_anemia","sickle_cell_disease","hemoglobin_s_disorder","hbs_disease","hemoglobinopathy","drepanocytic_anemia","drepanocytosis","hbs_anemia","sickle_cell_disorder","sickle_cell_condition", "8.7_g/dl_hemoglobin","8.7_grams_per_deciliter_hemoglobin","hemoglobin_level_of_8.7_g/dl","8.7_g_per_dl_hemoglobin","hemoglobin_concentration_8.7_g/dl","hemoglobin_amount_8.7_g/dl", "vaso_occlusive_crisis","painful_crisis","vascular_occlusion_crisis","vaso-occlusive_event","occlusive_crisis","ischemic_crisis","vascular_occlusion_episode","painful_occlusion_crisis","occlusive_attack","vascular_occlusive_crisis", "stroke","cerebrovascular_accident","cva","brain_attack","cerebral_apoplexy","brain_infarction","cerebral_vascular_accident","cerebrovascular_apoplexy","brain_epilepsy","cerebral_attack"
+        ]
+    },
+	{
+        "id": "33",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "sickle_cell_anemia","blood_transfusion", "10.5_g/dl_hemoglobin", "vaso_occlusive_crisis", "sickle_cell_anemia", "sickle_cell_disease", "drepanocytosis", "hemoglobinopathy", "blood_transfusion", "transfusion_of_blood", "hemotransfusion", "blood_infusion", "10.5_g/dl_hemoglobin", "hemoglobin_level_of_10.5_g/dl", "hemoglobin_concentration_10.5_g/dl", "vaso_occlusive_crisis", "painful_vaso-occlusive_episode", "acute_painful_crisis", "pain_crisis", "occlusive_crisis", "vascular_occlusion", "sickle_cell_crisis", "painful_crisis", "ischemic_crisis", "vascular_occlusive_event", "painful_occlusion"]
+    },
+	{
+        "id": "34",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "sickle_cell_anemia","blood_transfusion", "9.0_g/dl_hemoglobin", "vaso_occlusive_crisis" ,"hemoglobin_ss_disease", "drepanocytic_anemia", "sickle_cell_disease", "scd", "hemoglobinopathy", "hemoglobin_s_disease", "sickle_cell_disorder", "sickle_cell_hemoglobinopathy", "hb_ss_disease", "hbs_disease", "sickling_disorder", "sicklemia", "hemoglobinopathy_s", "sickling_hemoglobinopathy", "hemoglobin_ss_disorder", "drepanocytosis", "sickledex", "sicklemobility_test", "hemoglobin_s_disease", "hemoglobinopathy_ss", "sickle_cell_anaemia","transfusion_of_blood", "hemotransfusion", "blood_infusion", "blood_transplantation", "blood_donation", "transfused_blood", "blood_transferral", "erythrocyte_transfusion", "blood_transfuse", "transfusion_medicine", "red_blood_cell_transfusion", "blood_transfusing", "sangui_transfusion", "transfuse", "blood_transfusions", "erythrocyte_transfusions", "blood_transfused", "transfusions", "transfusing_blood", "blood_infusions", "blood_transferrals","hemoglobin_level_of_9.0_g/dl", "9.0_grams_per_deciliter_hemoglobin", "hemoglobin_concentration_9.0_g/dl", "hemoglobin_amount_9.0_g/dl", "hb_level_9.0_g/dl", "9.0_g_per_dl_hemoglobin", "hemoglobin_measurement_9.0_g/dl", "hemoglobin_content_9.0_g/dl", "hb_concentration_9.0_g/dl", "9.0_g/dl_hb", "9.0_g/dl_hemoglobin_concentration", "hemoglobin_9.0_g/dl", "hb_amount_9.0_g/dl", "hemoglobin_9.0_grams_per_deciliter", "hb_level_of_9.0_g/dl", "9.0_g/dl_hb_level", "hemoglobin_concentration_of_9.0_g/dl", "hb_content_9.0_g/dl", "hemoglobin_9.0_g_per_dl", "9.0_g/dl_hemoglobin_level","painful_vaso-occlusive_crisis", "voc", "sickle_cell_crisis", "vaso-occlusive_event", "vaso-occlusive_episode", "pain_crisis", "sickling_crisis", "painful_crisis", "vaso-occlusive_attack", "vascular_occlusion_crisis", "painful_vaso-occlusive_event", "painful_vaso-occlusive_episode", "sickle_cell_vaso-occlusive_crisis", "sickle_cell_vaso-occlusive_event", "vaso-occlusive_crisis_symptoms", "sickle_cell_pain_crisis", "painful_vaso-occlusive_attack", "voc_symptoms", "vascular_occlusion_episode", "painful_vaso-occlusive_attack", "vaso-occlusive_crisis_discomfort"]
+    },
+	{
+        "id": "35",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "sickle_cell_anemia","7.5_g/dl_hemoglobin", "vaso_occlusive_crisis", "sickle_cell_disease", "sickle_hemoglobinopathy", "hemoglobin_s_disease", "sickle_cell_disorder", "scd", "hemoglobin_ss_disease", "hemoglobinopathy_s", "hbs_disease", "hb_ss_disease", "7.5g/dl_hb", "7.5_g_per_dl_hb", "7.5_g_dl_hemoglobin", "7.5_grams_per_deciliter_hemoglobin", "7.5_g/dl_hgb", "7.5_g_per_dl_hgb", "7.5_grams_per_deciliter_hgb", "7.5_g/dl_hemoglobin", "7.5_g_per_dl_hemoglobin", "7.5_grams_per_deciliter_hemoglobin", "7.5_g/dl_hemoglobin_level", "7.5_grams_per_deciliter_hemoglobin_concentration", "7.5_g_dl_hemoglobin_count", "7.5_grams_per_deciliter_hb_amount", "7.5_g/dl_hemoglobin_concentration", "7.5_grams_per_dl_hb", "7.5_g_per_dl_hemoglobin_level", "7.5_grams_per_deciliter_hemoglobin_amount", "7.5_g/dl_hgb_concentration", "7.5_grams_per_dl_hgb_amount", "7.5_g_per_dl_hgb_level", "7.5_grams_per_dl_hemoglobin_concentration", "7.5_grams_per_dl_hgb_concentration", "7.5_g/dl_hgb_level", "7.5_grams_per_deciliter_hgb_concentration", "7.5_g_per_dl_hb_concentration", "7.5_grams_per_dl_hemoglobin_level", "7.5_g_per_dl_hemoglobin_amount", "7.5_grams_per_dl_hemoglobin_value", "7.5_g/dl_hemoglobin_content", "7.5_g_dl_hb_concentration", "7.5_grams_per_deciliter_hemoglobin_value", "7.5_g_per_dl_hgb_concentration", "7.5_grams_per_dl_hemoglobin_content", "7.5_g_dl_hb_level", "7.5_grams_per_dl_hemoglobin_level", "7.5_g_per_dl_hemoglobin_concentration", "7.5_grams_per_dl_hb_content", "7.5_g_dl_hb_amount", "7.5_grams_per_dl_hgb_content", "7.5_g_per_dl_hemoglobin_level", "7.5_grams_per_deciliter_hb_level", "7.5_g_dl_hgb_level", "vaso-occlusive_crisis", "painful_vaso-occlusive_episode", "painful_vaso-occlusive_crisis", "painful_vaso-occlusive_event", "painful_vaso-occlusive_occurrence", "painful_vaso-occlusive_situation", "painful_vaso-occlusive_incident"]
+    },
+	{
+        "id": "36",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "type_2_diabetes","7.2%_hba1c", "fasting_glucose_of_138", "45_bmi", "comorbidities", "lung_cancer", "hypertension", "dementia", "myocardial_infarction","non_insulin_dependent_diabetes", "niddm", "adult-onset_diabetes", "7.2_percent_hba1c", "hba1c_level_of_7.2", "glycosylated_hemoglobin_of_7.2", "fasting_glucose_at_138", "138_mg/dl_fasting_glucose", "138_milligrams_per_deciliter_fasting_glucose", "45_bmi", "body_mass_index_of_45", "bmi_45", "other_health_conditions", "coexisting_ailments", "additional_diseases", "lung_malignancy", "pulmonary_cancer", "bronchogenic_carcinoma", "high_blood_pressure", "elevated_blood_pressure", "arterial_hypertension", "cognitive_impairment", "brain_dysfunction", "memory_loss", "heart_attack", "coronary_occlusion", "cardiac_infarction","non_insulin_dependent_diabetes", "t2dm", "hyperglycemia_type_2", "hyperglycemia_non_insulin_dependent", "elevated_hba1c", "glycated_hemoglobin_level_of_7.2_percent", "blood_sugar_reading_of_138_after_fasting", "fasting_blood_glucose_of_138", "bmi_of_45", "body_mass_index_of_45", "obesity_with_bmi_45", "existing_conditions", "coexisting_ailments", "additional_health_issues", "pulmonary_cancer", "carcinoma_of_the_lung", "malignant_lung_tumor", "high_blood_pressure", "htn", "elevated_blood_pressure", "cognitive_impairment", "cognitive_decline", "memory_loss", "heart_attack", "mi", "coronary_thrombosis", "type_2_diabetes_associated", "diabetes_linked", "related_to_diabetes", "second_type_diabetes", "7.2_percent_hba1c", "hba1c_reading_of_7.2", "138_milligrams_per_deciliter_fasting_glucose", "fasting_blood_sugar_of_138", "bmi_45", "bmi_of_forty_five", "body_mass_index_equal_to_45", "accompanying_conditions", "coexistent_diseases", "concurrent_ailments", "malignancy_of_the_lung", "lung_neoplasm", "lung_carcinomatosis", "elevated_arterial_pressure", "high_systemic_pressure", "arterial_hypertension", "neurocognitive_deterioration", "decline_in_cognitive_function", "brain_failure", "cardiac_infarction", "heart_attack", "myocardial_necrosis", "type_ii_diabetes", "diabetes_type_2", "diabetes_type_ii", "dm"]
+    },
+	{
+        "id": "37",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "type_2_diabetes","4.5_hba1c", "glucose_of_138", "28_bmi", "5ml_metformin", "anti-diabetic_drugs", "thiazolidinedione", "diet_restrictions", "ketoacidosis_history", "comorbidities", "hypertension", "thyroid_disorder","type_2_diabetes", "non_insulin_dependent_diabetes_mellitus", "niddm", "adult-onset_diabetes", "4.5_hba1c", "glycated_hemoglobin_level_of_4.5", "hemoglobin_a1c_4.5", "glucose_of_138", "blood_sugar_reading_at_138", "serum_glucose_138", "28_bmi", "body_mass_index_28", "bmi_of_28", "5ml_metformin", "dose_of_5ml_metformin", "5ml_of_metformin_medication", "anti-diabetic_drugs", "hypoglycemic_medications", "diabetes_medications", "thiazolidinedione", "glitazone", "tzd", "diet_restrictions", "nutritional_limitations", "dietary_constrictions", "ketoacidosis_history", "previous_ketoacidosis_episode", "past_ketoacidosis_event", "comorbidities", "coexisting_conditions", "concurrent_ailments", "hypertension", "high_blood_pressure", "htn", "thyroid_disorder", "thyroid_condition", "thyroid_problem"]
+    },
+	{
+        "id": "38",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "type_2_diabetes","6_hba1c", "fasting_glucose_of_115", "35_bmi", "insulin", "8.5ml_metformin", "anti-diabetic_drugs", "sulfonylurea", "diet_restrictions", "periodic_fasting", "stroke","type_2_diabetes", "t2dm", "non-insulin-dependent_diabetes", "adult-onset_diabetes", "niddm","6_hba1c", "glycated_hemoglobin_6", "hemoglobin_a1c_level_of_6", "hba1c_six", "a1c_6","fasting_glucose_of_115", "blood_sugar_115_while_fasting", "glucose_level_115_after_fasting", "115_mg/dl_fasting_glucose","35_bmi", "body_mass_index_of_35", "bmi_35", "thirty-five_bmi", "body_mass_index_35","insulin", "beta-cell_hormone", "pancreatic_hormone_insulin", "endocrine_insulin", "insulin_hormone","8.5ml_metformin", "metformin_dosage_8.5_ml", "eight_point_five_milliliters_metformin", "metformin_8.5ml","anti-diabetic_drugs", "hypoglycemic_medications", "diabetes_meds", "antidiabetic_agents", "glucose-lowering_drugs","sulfonylurea", "su_drug", "sulfonylurea_medication", "sulfonylurea_compound", "su_agent","diet_restrictions", "nutritional_limitations", "dietary_restrictions", "eating_constraints", "food_intake_restrictions","periodic_fasting", "intermittent_fasting", "cyclic_fasting", "alternate-day_fasting", "time-restricted_eating","stroke", "cerebrovascular_accident", "brain_attack", "cerebral_apoplexy", "brain_vascular_incident"]
+    },
+	{
+        "id": "39",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "type_2_diabetes","5.5_hba1c", "glucose_of_100", "32_bmi", "no_insulin", "5ml_metformin", "no_anti-diabetic_drugs", "diet_restrictions", "keto_diet", "ketoacidosis_history", "comorbidities", "hypertension","type_2_diabetes", "non_insulin_dependent_diabetes", "adult-onset_diabetes", "t2dm", "niddm", "5.5_hba1c", "hemoglobin_a1c_level_of_5.5", "glycated_hemoglobin_5.5", "hba1c_5.5", "glucose_of_100", "blood_sugar_100", "plasma_glucose_100", "serum_glucose_level_of_100", "32_bmi", "body_mass_index_32", "bmi_32", "32_body_mass_index", "no_insulin", "without_insulin_therapy", "not_taking_insulin", "insulin-free", "5ml_metformin", "5000_micrograms_metformin", "dose_of_metformin_5ml", "5ml_biguanide", "no_anti-diabetic_drugs", "not_on_antidiabetic_meds", "without_diabetes_medication", "anti-diabetic_drug_free", "diet_restrictions", "nutritional_limitations", "eating_constraints", "dietary_restrictions", "keto_diet", "ketogenic_regimen", "ketosis_diet", "low_carb_high_fat_diet", "ketoacidosis_history", "prior_ketoacidotic_incident", "past_ketoacidosis_case", "history_of_ketoacidosis", "comorbidities", "coexisting_conditions", "concurrent_ailments", "medical_comorbidities", "hypertension", "high_blood_pressure", "elevated_blood_pressure", "hypertensive_condition"]
+    },
+	{
+        "id": "40",
+        "age": null,
+        "gender": null,
+        "diagnoses": [
+            "type_2_diabetes","6.3%_hba1c", "fasting_glucose_of_115", "40_bmi", "8.5ml_metformin", "diet_restrictions", "low-calorie_diet", "comorbidities", "chronic_kidney_disease","type_2_diabetes", "t2d", "non_insulin_dependent_diabetes", "adult-onset_diabetes", "niddm", "6.3%_hba1c", "glycated_hemoglobin_level_of_6.3%", "hemoglobin_a1c_of_6.3%", "elevated_glycosylated_hemoglobin", "fasting_glucose_of_115", "blood_sugar_reading_of_115_after_fasting", "115_mg/dl_fasting_blood_glucose", "40_bmi", "body_mass_index_of_40", "forty_bmi", "obese_with_a_bmi_of_40", "8.5ml_metformin", "dose_of_8.5_milliliters_metformin", "8.5_ml_of_metformin_medication", "diet_restrictions", "dietary_limitations", "food_intake_restrictions", "eating_constraints", "low-calorie_diet", "calorie-restricted_diet", "low-energy_diet", "restricted_calorie_intake", "comorbidities", "coexisting_conditions", "concurrent_diseases", "multiple_illnesses", "chronic_kidney_disease", "ckd", "persistent_renal_condition", "long-term_kidney_disorder"]
+    }
+]

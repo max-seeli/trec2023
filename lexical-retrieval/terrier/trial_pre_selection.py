@@ -53,9 +53,12 @@ def parse_results(index, results):
 if __name__ == "__main__":
     pt.init()
     index = pt.IndexFactory.of("./ct_index/data.properties")
-    queries = create_topic_categories_dataframe(get_topic_categories())
 
-    pipeline = pt.BatchRetrieve(index, wmodel="BM25", verbose=True, num_results=2250)
+    diagnoses = ["glaucoma", "anxiety", "COPD", "breast cancer", "covid 19", "rheumatoid arthritis", "sickle cell anemia", "type 2 diabetes"]
+
+    queries = create_topic_categories_dataframe(diagnoses)
+
+    pipeline = pt.BatchRetrieve(index, wmodel="BM25", verbose=True, num_results=2000)
 
     pipeline.compile()
     results = pipeline.transform(queries)
@@ -63,6 +66,10 @@ if __name__ == "__main__":
     print(results.head())
     print(results.info())
 
+    documents = results["docno"].unique()
+    print(f"Number of unique documents: {len(documents)}")
+    print()
+    
     for _, query in queries.iterrows():
         print(f"Query: {query['query']}, Number: {query['qid']}")
         print(f"Number of results: {len(results[results['qid'] == query['qid']])}")
@@ -75,4 +82,4 @@ if __name__ == "__main__":
             
         print()
     
-    parse_results(index, results)
+    # parse_results(index, results)

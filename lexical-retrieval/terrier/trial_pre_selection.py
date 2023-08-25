@@ -13,6 +13,7 @@ TOPIC_TEMPLATES = ["glaucoma", "anxiety", "COPD", "breast cancer", "covid 19", "
 
 RAW_TRIALS_FOLDER = "data/clinical_trials/raw"
 TRIAL_PRE_SELECTION_FILE = "data/clinical_trials/trial_pre_selection_16k.json"
+TRIAL_PRE_SELECTION_FILE_SLIM = "data/clinical_trials/trial_pre_selection_16k_slim.json"
 
 
 
@@ -73,7 +74,13 @@ def parse_results(index, results):
     
     with open(TRIAL_PRE_SELECTION_FILE, "w") as f:
         json.dump(trial_selection, f, indent=4)
+
+    # Create a slim version of the pre selection file
+    keys_to_remove = ["brief_title", "brief_summary", "detailed_description"]
+    trial_selection_slim = [{k: v for k, v in trial.items() if k not in keys_to_remove} for trial in trial_selection]
    
+    with open(TRIAL_PRE_SELECTION_FILE_SLIM, "w") as f:
+        json.dump(trial_selection_slim, f, indent=4)
 
 def check_overlap(n=100):
     

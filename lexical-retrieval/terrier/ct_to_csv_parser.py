@@ -17,7 +17,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--first_n", type=int, default=None, help="Number of clinical trials to write to csv")
     args = parser.parse_args()
 
-    cts = get_clinical_trial_dict(100)
+    cts = get_clinical_trial_dict(args.first_n)
 
     # Rename field nct_id to docno (required by pyterrier)
     for ct in cts:

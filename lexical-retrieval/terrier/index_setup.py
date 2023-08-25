@@ -41,12 +41,16 @@ if __name__ == "__main__":
         ct["docno"] = ct.pop("nct_id")
 
     # Relevant fields:
-    ct_fields = ["docno", "brief_title", "brief_summary",
+    ct_fields = ["brief_title", "brief_summary",
                  "detailed_description", "inclusion", "exclusion",
                  "gender", "minimum_age", "maximum_age",
                  "conditions", "interventions"] 
-    print("Fields:", ct_fields, ct_fields[1:])
+    
+    meta_fields = {
+        "docno": 20,
+        "brief_title": 512,
+    }
 
-    index_clinical_trials(cts, ct_fields, ct_fields[1:])
+    index_clinical_trials(cts, meta_fields, ct_fields)
 
 

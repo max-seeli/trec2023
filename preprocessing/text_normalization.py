@@ -45,9 +45,10 @@ def generate_variations(sentence):
     return variations
 
 def extract_entities(text):
-    model.to("cuda")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
 
-    inputs = tokenizer.encode(text, return_tensors="pt").to("cuda")
+    inputs = tokenizer.encode(text, return_tensors="pt").to(device)
     outputs = model(inputs)[0]
     outputs = outputs.to("cpu")
     #print(outputs)
@@ -93,9 +94,9 @@ def extract_entities(text):
 
     new_sentence = new_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").strip()
 
-    model_chem.to("cuda")
+    model_chem.to(device)
 
-    inputs = tokenizer_chem.encode(new_sentence, return_tensors="pt").to("cuda")
+    inputs = tokenizer_chem.encode(new_sentence, return_tensors="pt").to(device)
     outputs = model_chem(inputs)[0]
 
     outputs = outputs.to("cpu")

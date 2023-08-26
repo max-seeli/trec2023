@@ -160,12 +160,22 @@ def extract_entities(text):
 
         #print(entities)
 
+        sentence = sentence.replace("\r", "").replace("\n", "")
+
+        print(sentence)
+
         if "ABSENT" in str(classification):
-            entity = re.findall(r'\[entity\].*?\[entity\]', sentence)[0].replace("[entity]","").strip()
+            search = re.findall(r'\[entity\].*?\[entity\]', sentence)
+            if len(search) == 0:
+                continue
+            entity = search[0].replace("[entity]","").strip()
             final_entities.append("n_" + entity.lower().replace(" ", "_"))
             #entities = ["n_" + item.lower().replace(" ", "_") for item in entities]
         else:
-            entity = re.findall(r'\[entity\].*?\[entity\]', sentence)[0].replace("[entity]","").strip()
+            search = re.findall(r'\[entity\].*?\[entity\]', sentence)
+            if len(search) == 0:
+                continue
+            entity = search[0].replace("[entity]","").strip()
             final_entity = entity.lower().replace(" ", "_").replace("#_#_", "")
             final_entity = final_entity.replace("_-_", "-").replace("_/_", "/").replace("_,_", ",_").replace("_.","").replace("_._", ".").replace("_'_", "'")
             if not (final_entity == "" or final_entity == ","):

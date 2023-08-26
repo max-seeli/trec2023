@@ -4,7 +4,7 @@ from tqdm import tqdm
 
 trials = []
 
-with open("trials.json", "r") as json_file:
+with open("tmp.json", "r") as json_file:
     trials = json.load(json_file)
 
 with open("trials_preprocessed.json", "w") as file:
@@ -60,7 +60,7 @@ for index, trial in tqdm(enumerate(trials)):
 
     preprocessed_trial = {"nct_id": trial['nct_id'],
                     "minimum_age": trial['minimum_age'],
-                    "maximum_age": trial['maximum_age'],
+                    "maximium_age": trial['maximium_age'],
                     "gender": trial['gender'],
                     "inclusion": inclusion_criteria_final,
                     "exclusion": exclusion_criteria_final}

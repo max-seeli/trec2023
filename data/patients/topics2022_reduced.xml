@@ -1,0 +1,13 @@
+<topics task="2022 TREC Clinical Trials">
+  <topic number="46" template="COVID-19">
+    <field name="definitive diagnosis">positive</field>
+    <field name="symptoms">cough, body ache</field>
+    <field name="fever">yes</field>
+    <field name="hospitalization">no</field>
+    <field name="ventilation">no</field>
+    <field name="vaccination status">unvaccinated</field>
+    <field name="pain relief">body ache and myalgia better after using Tylenol</field>
+    <field name="oxygen saturation">98%</field>
+    <field name="comorbid respiratory diseases">none</field>
+  </topic>
+</topics>

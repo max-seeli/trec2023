@@ -1,0 +1,63 @@
+{
+    "min_score": 5,
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "range": {
+                        "birthdate": {
+                            "from": "1924-06-18",
+                            "to": "2005-06-18",
+                            "include_lower": true,
+                            "include_upper": true,
+                            "boost": 1.0
+                        }
+                    }
+                }
+            ],
+            "must_not": [
+                {
+                    "match": {
+                        "exclusion": {
+                            "query": "primary_open_angle_glaucoma",
+                            "operator": "OR",
+                            "prefix_length": 0,
+                            "max_expansions": 50,
+                            "fuzzy_transpositions": true,
+                            "lenient": false,
+                            "zero_terms_query": "NONE",
+                            "auto_generate_synonyms_phrase_query": true,
+                            "boost": 2.0
+                        }
+                    }
+                }
+            ],
+            "should": [
+                {
+                    "query_string": {
+                        "query": "primary_open_angle_glaucoma",
+                        "fields": [
+                            "inclusion^1.0"
+                        ],
+                        "type": "best_fields",
+                        "default_operator": "or",
+                        "max_determinized_states": 10000,
+                        "enable_position_increments": true,
+                        "fuzziness": "AUTO",
+                        "fuzzy_prefix_length": 0,
+                        "fuzzy_max_expansions": 50,
+                        "phrase_slop": 0,
+                        "lenient": true,
+                        "escape": false,
+                        "auto_generate_synonyms_phrase_query": true,
+                        "fuzzy_transpositions": true,
+                        "boost": 2.0
+                    }
+                }
+            ],
+            "adjust_pure_negative": true,
+            "minimum_should_match": "16%",
+            "boost": 1.0
+        }
+    }
+}

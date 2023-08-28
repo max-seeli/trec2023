@@ -4,7 +4,7 @@ import csv
 
 from CTnlp.parsers import parse_clinical_trials_from_folder
 
-TRIALS_FOLDER = "data/clinical_trials"
+TRIALS_FOLDER = "data/clinical_trials/raw"
 
 def get_clinical_trial_dict(first_n=None):
     cts = parse_clinical_trials_from_folder(folder_name=TRIALS_FOLDER, first_n=first_n)

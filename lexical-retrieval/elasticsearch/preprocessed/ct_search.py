@@ -19,6 +19,7 @@ for patient in patients:
     gender = patient['gender']
     diagnoses = patient['diagnoses']
     topic_id = patient['id']
+    template = patient['template']
 
     if min_age == 'adult' or max_age == 'adult':
         min_age = 18
@@ -33,33 +34,6 @@ for patient in patients:
     "size": 1000,
     "query": {
         "bool": {
-            "must": [
-                {
-                    "match": {
-                        "gender": {
-                            "query": f"A {gender}",
-                            "operator": "or",
-                            "boost": 2
-                        }
-                    }
-                },
-                {
-                    "range": {
-                        "minimum_age": {
-                            "lte": min_age,
-                            "boost": 2
-                        }
-                    }
-                },
-                {
-                    "range": {
-                        "maximum_age": {
-                            "gte": max_age,
-                            "boost": 2
-                        }
-                    }
-                }
-            ],
             "must_not": [
                 {
                     "match": {
@@ -85,20 +59,63 @@ for patient in patients:
                             "fuzzy_transpositions": True,
                             "lenient": True,
                             "zero_terms_query": "NONE",
-                            "auto_generate_synonyms_phrase_query": True
+                            "auto_generate_synonyms_phrase_query": True,
+                            "boost": 3.0
+                        }
+                    }
+                },
+                {
+                    "match": {
+                        "detailed_description": {
+                            "query": template,
+                            "operator": "OR",
+                            "fuzziness": "AUTO",
+                            "fuzzy_transpositions": True,
+                            "lenient": True,
+                            "zero_terms_query": "ALL",
+                            "auto_generate_synonyms_phrase_query": True,
+                            "boost": 0.5
+                        }
+                    }
+                },
+                {
+                    "match": {
+                        "brief_title": {
+                            "query": template,
+                            "operator": "OR",
+                            "fuzziness": "AUTO",
+                            "fuzzy_transpositions": True,
+                            "lenient": True,
+                            "zero_terms_query": "ALL",
+                            "auto_generate_synonyms_phrase_query": True,
+                            "boost": 0.5
+                        }
+                    }
+                },
+                {
+                    "match": {
+                        "brief_summary": {
+                            "query": template,
+                            "operator": "OR",
+                            "fuzziness": "AUTO",
+                            "fuzzy_transpositions": True,
+                            "lenient": True,
+                            "zero_terms_query": "ALL",
+                            "auto_generate_synonyms_phrase_query": True,
+                            "boost": 0.5
                         }
                     }
                 }
             ],
-            "adjust_pure_negative": True,
-            "boost": 1.0
+            "adjust_pure_negative": True
         }
     }
 }
+    #print(search_query)
 
     search_results = client.search(index="trials", body=search_query)
 
-    print(f"Found a total of {search_results['hits']['total']['value']} results.")
+    print(f"Found a total of {search_results['hits']['total']['value']} results for patient {topic_id}.")
 
     for hit in search_results["hits"]["hits"]:
         min_score = search_results['hits']['hits'][0]['_score']
@@ -111,9 +128,15 @@ for patient in patients:
             if score > max_score:
                 max_score = score
 
-    rank = 1
+    #print(f"Lowest Score: {min_score}")
+    #print(f"Highest Score: {max_score}")
+
+    rank = 0
 
     for hit in search_results["hits"]["hits"]:
+
+        if rank == 999:
+            break
 
         stored_json_data = hit["_source"]
         #print(stored_json_data)
@@ -125,7 +148,7 @@ for patient in patients:
         else:
             confidence_score = (score - min_score) / (max_score - min_score)
 
-        with open("results.txt", "a") as file:
+        with open("results_all.txt", "a") as file:
             file.write(f"{topic_id} Q0 {nct_id} {rank} {confidence_score} elastic-pre\n")
 
         rank += 1

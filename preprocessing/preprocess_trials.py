@@ -4,7 +4,7 @@ from tqdm import tqdm
 
 trials = []
 
-with open("tmp.json", "r") as json_file:
+with open("data/clinical_trials/trial_pre_selection_16k_slim.json", "r") as json_file:
     trials = json.load(json_file)
 
 with open("trials_preprocessed.json", "w") as file:

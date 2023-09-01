@@ -3,14 +3,14 @@ import torch
 from transformers import AutoTokenizer, AutoModelForTokenClassification, AutoModelForSequenceClassification, TextClassificationPipeline
 import spacy
 
-tokenizer = AutoTokenizer.from_pretrained("alvaroalon2/biobert_diseases_ner")
-model = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_diseases_ner")
+biobert_disease_tokenizer = AutoTokenizer.from_pretrained("alvaroalon2/biobert_diseases_ner")
+biobert_disease_model = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_diseases_ner")
 
-tokenizer_chem = AutoTokenizer.from_pretrained("alvaroalon2/biobert_chemical_ner")
-model_chem = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_chemical_ner")
+biobert_chemical_tokenizer = AutoTokenizer.from_pretrained("alvaroalon2/biobert_chemical_ner")
+biobert_chemical_model = AutoModelForTokenClassification.from_pretrained("alvaroalon2/biobert_chemical_ner")
 
-tokenizer_neg = AutoTokenizer.from_pretrained("bvanaken/clinical-assertion-negation-bert")
-model_neg = AutoModelForSequenceClassification.from_pretrained("bvanaken/clinical-assertion-negation-bert")
+clinical_negation_tokenizer = AutoTokenizer.from_pretrained("bvanaken/clinical-assertion-negation-bert")
+clinical_negation_model = AutoModelForSequenceClassification.from_pretrained("bvanaken/clinical-assertion-negation-bert")
 
 def split_into_sentences(text):
     nlp = spacy.load("en_core_web_sm")
@@ -45,111 +45,14 @@ def generate_variations(sentence):
     return variations
 
 def extract_entities(text):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
 
-    inputs = tokenizer.encode(text, return_tensors="pt").to(device)
-    outputs = model(inputs)[0]
-    outputs = outputs.to("cpu")
-    #print(outputs)
-    predictions = torch.argmax(outputs, dim=2)
-    predictions = predictions.to("cpu")
-    #print(predictions)
-    tokens = tokenizer.convert_ids_to_tokens(inputs[0])
-    #print(tokens)
-
-    entities = []
-    new_sentence = ""
-       
-    preds = predictions[0].tolist()
-    #print(preds)
-    prev = False
-
-    for i in range(len(tokens)):
-        label = "[entity]"
-
-        if preds[i] == 0 and not prev:
-            entities.append(tokens[i])
-            new_sentence = new_sentence + " " + label + " " + tokens[i]
-            prev = True
-        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev and not (tokens[i] == "[SEP]" or tokens[i] == "[CLS]"):
-            if tokens[i].startswith("##"):
-                entities[len(entities)-1] = (entities[len(entities)-1] + tokens[i][2:])
-                new_sentence = new_sentence + tokens[i][2:]
-            else:
-                entities[len(entities)-1] = (entities[len(entities)-1] + " " + tokens[i])
-                new_sentence = new_sentence + " " + tokens[i]
-        elif preds[i] == 2 or tokens[i] == "[SEP]" or tokens[i] == "[CLS]":
-            if prev:
-                prev = False
-                if tokens[i].startswith("##"):
-                    new_sentence = new_sentence + " " + label + tokens[i][2:]
-                else:
-                    new_sentence = new_sentence + " " + label + tokens[i]
-            else:
-                if tokens[i].startswith("##"):
-                    new_sentence = new_sentence + tokens[i][2:]
-                else:
-                    new_sentence = new_sentence + " " + tokens[i]
-
-    new_sentence = new_sentence.strip().replace("[CLS]", "").replace("[SEP]", "").strip()
-
-    model_chem.to(device)
-
-    inputs = tokenizer_chem.encode(new_sentence, return_tensors="pt").to(device)
-    outputs = model_chem(inputs)[0]
-
-    outputs = outputs.to("cpu")
-
-    #print(outputs)
-    predictions = torch.argmax(outputs, dim=2)
-    prediction = predictions.to("cpu")
-    #print(predictions)
-    tokens = tokenizer_chem.convert_ids_to_tokens(inputs[0])
-    #print(tokens)
-
-    new_chem_sentence = ""
-       
-    preds = predictions[0].tolist()
-    #print(preds)
-    prev = False
-
-    for i in range(len(tokens)):
-        label = "[entity]"
-
-        if preds[i] == 0 and not prev:
-            entities.append(tokens[i])
-            new_chem_sentence = new_chem_sentence + " " + label + " " + tokens[i]
-            prev = True
-        elif (preds[i] == 1 or tokens[i].startswith("##")) and prev and not (tokens[i] == "[SEP]" or tokens[i] == "[CLS]"):
-            if tokens[i].startswith("##"):
-                entities[len(entities)-1] = (entities[len(entities)-1] + tokens[i][2:])
-                new_chem_sentence = new_chem_sentence + tokens[i][2:]
-            else:
-                entities[len(entities)-1] = (entities[len(entities)-1] + " " + tokens[i])
-                new_chem_sentence = new_chem_sentence + " " + tokens[i]
-        elif preds[i] == 2 or tokens[i] == "[SEP]" or tokens[i] == "[CLS]":
-            if prev:
-                prev = False
-                if tokens[i].startswith("##"):
-                    new_chem_sentence = new_chem_sentence + " " + label + tokens[i][2:]
-                else:
-                    new_chem_sentence = new_chem_sentence + " " + label + tokens[i]
-            else:
-                if tokens[i].startswith("##"):
-                    new_chem_sentence = new_chem_sentence + tokens[i][2:]
-                else:
-                    new_chem_sentence = new_chem_sentence + " " + tokens[i]
-
-    if entities == []:
-        return entities
-
-    new_chem_sentence = new_chem_sentence.replace("[CLS]", "").replace("[SEP]", "").replace("[ ", "[").replace(" ]", "]")
-
-    variations = generate_variations(new_chem_sentence)
+    disease_extracted_text = extract_entities_with_model(text, biobert_disease_model, biobert_disease_tokenizer)
+    chemical_extracted_text = extract_entities_with_model(disease_extracted_text, biobert_chemical_model, biobert_chemical_tokenizer)
+    
+    variations = generate_variations(chemical_extracted_text)
 
     if variations == []:
-        variations = [new_chem_sentence]
+        variations = [chemical_extracted_text]
 
     #print(new_sentence)
 
@@ -157,7 +60,7 @@ def extract_entities(text):
 
     #print(variations)
 
-    classifier = TextClassificationPipeline(model=model_neg, tokenizer=tokenizer_neg)
+    classifier = TextClassificationPipeline(model=clinical_negation_model, tokenizer=clinical_negation_tokenizer)
 
     final_entities = []
 
@@ -173,7 +76,7 @@ def extract_entities(text):
 
         sentence = sentence.replace("\r", "").replace("\n", "")
 
-        print(sentence)
+        #print(sentence)
 
         if "ABSENT" in str(classification):
             search = re.findall(r'\[entity\].*?\[entity\]', sentence)
@@ -206,14 +109,73 @@ def pipeline(text):
     return extracted_entities
 
 
-#text = "Medically unable or unwilling to discontinue current anti-diabetic therapy for 72 hours prior to admission to the research facility and remain off medication until the follow-up visit."
+def extract_entities_with_model(text, model, tokenizer):
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
 
-#texts = split_into_sentences(text)
+    input = tokenizer.encode(text, return_tensors="pt").to(device)
+    output = model(input)
+    output = output[0].to("cpu")
+    predictions = torch.argmax(output, dim=2).squeeze().tolist()
+    
+    e_start = tokenizer.encode("< ES >", return_tensors="pt")[0].tolist()[1:-1]
+    e_end = tokenizer.encode("< EE >", return_tensors="pt")[0].tolist()[1:-1]
 
-#print(texts)
+    token_ids = input[0].tolist().copy()
 
-#extracted_entities = []
-#for text in texts:
-#    extracted_entities.extend(extract_entities(text))
+    chains = []
 
-#print(extracted_entities)
+    # Find chains of [0, 1] (start inclusive, end exclusive)
+    i = 0
+    while i < len(predictions):
+        if predictions[i] in [0, 1]:
+            j = i + 1
+            for j in range(i+1, len(predictions)):
+                if predictions[j] not in [0, 1]:
+                    break
+            chains.append([i, j])
+            i = j
+        else:
+            i += 1 
+
+    # Expand Chains
+    for chain in chains:
+        if tokenizer.convert_ids_to_tokens(token_ids[chain[0]]).startswith("##"):
+            i = chain[0] - 1
+            while i >= 0 and tokenizer.convert_ids_to_tokens(token_ids[i]).startswith("##"):
+                i -= 1
+            chain[0] = i
+        if chain[1] < len(token_ids) and tokenizer.convert_ids_to_tokens(token_ids[chain[1]]).startswith("##"):
+            print("yes")
+            i = chain[1] + 1
+            while i < len(token_ids) and (tokenizer.convert_ids_to_tokens(token_ids[i]).startswith("##") or predictions[i] == 1):
+                i += 1
+            chain[1] = i
+
+    # Remove overlapping chains
+    i = 0
+    while i < len(chains):
+        j = i + 1
+        while j < len(chains):
+            if chains[j][0] in range(chains[i][0], chains[i][1]) or chains[j][1] - 1 in range(chains[i][0], chains[i][1]):
+                # Pop shorter chain
+                if chains[j][1] - chains[j][0] > chains[i][1] - chains[i][0]:
+                    chains.pop(i)
+                    i -= 1
+                    break
+                else:
+                    chains.pop(j)
+            else:
+                j += 1
+        i += 1
+
+    # Insert start and end tokens (from back to front to not mess up indices)
+    for chain in reversed(chains):
+        token_ids = list_list_insertion(token_ids, e_end, chain[1])
+        token_ids = list_list_insertion(token_ids, e_start, chain[0])
+
+    return tokenizer.decode(token_ids).replace("< ES >", "[entity]").replace("< EE >", "[entity]").replace(" [entity] [SEP] [entity]", "").replace(" [SEP]", "").replace("[CLS] ", "").replace(".", " .").replace(",", " ,").replace("?", " ?").replace("!", " !").replace("'", " ' ").replace("[ ", "[").replace(" ]", "]")
+
+def list_list_insertion(original_list, list_to_insert, index):
+    return original_list[:index] + list_to_insert + original_list[index:]

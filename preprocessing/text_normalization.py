@@ -12,37 +12,22 @@ biobert_chemical_model = AutoModelForTokenClassification.from_pretrained("alvaro
 clinical_negation_tokenizer = AutoTokenizer.from_pretrained("bvanaken/clinical-assertion-negation-bert")
 clinical_negation_model = AutoModelForSequenceClassification.from_pretrained("bvanaken/clinical-assertion-negation-bert")
 
+def pipeline(text):
+
+    sentences = split_into_sentences(text)
+
+    extracted_entities = []
+    for sentence in sentences:
+        extracted_entities.extend(extract_entities(sentence))
+
+    return extracted_entities
+
 def split_into_sentences(text):
+
     nlp = spacy.load("en_core_web_sm")
     doc = nlp(text)
-    sentences = [sent.text for sent in doc.sents]
-    return sentences
+    return [sent.text for sent in doc.sents]
 
-def remove_entities_except_substring(sentence, substring):
-    placeholder = "[entity]"
-    parts = sentence.split(substring)
-
-    for i in range(len(parts)):
-        if placeholder in parts[i]:
-            parts[i] = parts[i].replace(" " + placeholder, "")
-
-    result = substring.join(parts)
-    return result
-
-def generate_variations(sentence):
-    entities = re.findall(r'\[entity\].*?\[entity\]', sentence)
-
-    #print(entities)
-
-    num_entities = len(entities)
-    variations = []
-
-    for entity in entities:
-        variations.append(remove_entities_except_substring(sentence, entity).strip())
-
-    #print(variations)
-
-    return variations
 
 def extract_entities(text):
 
@@ -51,63 +36,31 @@ def extract_entities(text):
     
     variations = generate_variations(chemical_extracted_text)
 
-    if variations == []:
-        variations = [chemical_extracted_text]
-
-    #print(new_sentence)
-
-    #print(new_chem_sentence)
-
-    #print(variations)
-
     classifier = TextClassificationPipeline(model=clinical_negation_model, tokenizer=clinical_negation_tokenizer)
 
     final_entities = []
 
-    for sentence in variations:
+    classifications = classifier(variations)
 
-        classification = classifier(sentence)
+    for i, sentence_variant in enumerate(variations):
 
-        #print(new_sentence)
+        sentence_variant = sentence_variant.replace("\r", "").replace("\n", "")
 
-        #print(classification)
+        entity = re.search(r'\[entity\].*?\[entity\]', sentence_variant).group(0)
+        entity = re.sub(r' +', ' ', entity)
+        entity = re.sub(r' *[,\\\'\.\?\!-] *', '_', entity)
+    
+        entity = entity.replace("[entity]","") \
+                    .strip() \
+                    .lower() \
+                    .replace(" ", "_")
 
-        #print(entities)
-
-        sentence = sentence.replace("\r", "").replace("\n", "")
-
-        #print(sentence)
-
-        if "ABSENT" in str(classification):
-            search = re.findall(r'\[entity\].*?\[entity\]', sentence)
-            if len(search) == 0:
-                continue
-            entity = search[0].replace("[entity]","").strip()
-            final_entities.append("n_" + entity.lower().replace(" ", "_"))
-            #entities = ["n_" + item.lower().replace(" ", "_") for item in entities]
+        if classifications[i]['label'] == "ABSENT":
+            final_entities.append("n_" + entity)
         else:
-            search = re.findall(r'\[entity\].*?\[entity\]', sentence)
-            if len(search) == 0:
-                continue
-            entity = search[0].replace("[entity]","").strip()
-            final_entity = entity.lower().replace(" ", "_").replace("#_#_", "")
-            final_entity = final_entity.replace("_-_", "-").replace("_/_", "/").replace("_,_", ",_").replace("_.","").replace("_._", ".").replace("_'_", "'")
-            if not (final_entity == "" or final_entity == ","):
-                final_entities.append(final_entity)
-            #entities = [item.lower().replace(" ", "_") for item in entities]
+            final_entities.append(entity)
 
     return final_entities
-
-def pipeline(text):
-    texts = split_into_sentences(text)
-
-    extracted_entities = []
-    for text in texts:
-        extracted_entities.extend(extract_entities(text))
-
-    #print(extracted_entities)
-    return extracted_entities
-
 
 def extract_entities_with_model(text, model, tokenizer):
     
@@ -165,6 +118,32 @@ def extract_entities_with_model(text, model, tokenizer):
     
     return tokenizer.decode(token_ids).replace("< ES >", "[entity]").replace("< EE >", "[entity]").replace(" [entity] [SEP] [entity]", "").replace(" [SEP]", "").replace("[CLS] ", "").replace(".", " .").replace(",", " ,").replace("?", " ?").replace("!", " !").replace("'", " ' ").replace("[ ", "[").replace(" ]", "]")
 
+# Retruns a list of sentences with exactly one entity each
+def generate_variations(sentence):
 
+    entities = set(re.findall(r'\[entity\].*?\[entity\]', sentence))
+
+    variations = []
+
+    for entity in entities:
+        variations.append(remove_other_entity_recognition(sentence, entity).strip())
+
+    return variations
+
+# Removes all entities from a sentence except the one specified by substring
+# Substring must be of the form "[entity] ... [entity]"
+def remove_other_entity_recognition(sentence, entity):
+    
+    # If the same entity is mentioned multiple times, the first occurence is chosen
+    entity_start = sentence.find(entity) 
+    entity_end = entity_start + len(entity)
+
+    result = sentence[:entity_start].replace("[entity] ", "") \
+                + sentence[entity_start:entity_end] \
+                + sentence[entity_end:].replace("[entity] ", "")
+
+    return result
+
+# Inserts a list elementwise into another list at a specified index
 def list_list_insertion(original_list, list_to_insert, index):
     return original_list[:index] + list_to_insert + original_list[index:]

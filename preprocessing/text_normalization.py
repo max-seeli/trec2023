@@ -124,58 +124,47 @@ def extract_entities_with_model(text, model, tokenizer):
 
     token_ids = input[0].tolist().copy()
 
-    chains = []
-
     # Find chains of [0, 1] (start inclusive, end exclusive)
-    i = 0
-    while i < len(predictions):
-        if predictions[i] in [0, 1]:
-            j = i + 1
-            for j in range(i+1, len(predictions)):
-                if predictions[j] not in [0, 1]:
-                    break
-            chains.append([i, j])
-            i = j
-        else:
-            i += 1 
+    predictions_str = "".join([str(i) for i in predictions])
+    pattern = re.compile(f'[01]+')
+    chains = [[match.start(), match.end()] for match in pattern.finditer(predictions_str)]
+    
+    def is_continuation_token(token_id):
+        return tokenizer.convert_ids_to_tokens(token_id).startswith("##")
 
     # Expand Chains
     for chain in chains:
-        if tokenizer.convert_ids_to_tokens(token_ids[chain[0]]).startswith("##"):
-            i = chain[0] - 1
-            while i >= 0 and tokenizer.convert_ids_to_tokens(token_ids[i]).startswith("##"):
-                i -= 1
-            chain[0] = i
-        if chain[1] < len(token_ids) and tokenizer.convert_ids_to_tokens(token_ids[chain[1]]).startswith("##"):
-            print("yes")
-            i = chain[1] + 1
-            while i < len(token_ids) and (tokenizer.convert_ids_to_tokens(token_ids[i]).startswith("##") or predictions[i] == 1):
-                i += 1
-            chain[1] = i
+        start_index = chain[0]
+        end_index = chain[1]
+
+        # Expand to the left
+        while start_index > 0 and (is_continuation_token(token_ids[start_index]) or predictions[start_index - 1] == 1):
+            start_index -= 1
+
+        # Expand to the right
+        while end_index < len(token_ids) and (is_continuation_token(token_ids[end_index]) or predictions[end_index] == 1):
+            end_index += 1
+
+        chain[0] = start_index
+        chain[1] = end_index
 
     # Remove overlapping chains
-    i = 0
-    while i < len(chains):
-        j = i + 1
-        while j < len(chains):
-            if chains[j][0] in range(chains[i][0], chains[i][1]) or chains[j][1] - 1 in range(chains[i][0], chains[i][1]):
-                # Pop shorter chain
-                if chains[j][1] - chains[j][0] > chains[i][1] - chains[i][0]:
-                    chains.pop(i)
-                    i -= 1
-                    break
-                else:
-                    chains.pop(j)
-            else:
-                j += 1
-        i += 1
+    non_overlapping_chains = []
+    while 0 < len(chains):
+        possible_chains = [checked_chain for checked_chain in chains if not (chains[0][0] >= checked_chain[1] or chains[0][1] <= checked_chain[0])]
+        lengths = [checked_chain[1] - checked_chain[0] for checked_chain in possible_chains]
+        # get index of longest chain
+        non_overlapping_chains.append(possible_chains[lengths.index(max(lengths))])
+        # remove all chains that overlap with longest chain
+        chains = [chain for chain in chains if chain not in possible_chains]
 
     # Insert start and end tokens (from back to front to not mess up indices)
-    for chain in reversed(chains):
+    for chain in reversed(non_overlapping_chains):
         token_ids = list_list_insertion(token_ids, e_end, chain[1])
         token_ids = list_list_insertion(token_ids, e_start, chain[0])
-
+    
     return tokenizer.decode(token_ids).replace("< ES >", "[entity]").replace("< EE >", "[entity]").replace(" [entity] [SEP] [entity]", "").replace(" [SEP]", "").replace("[CLS] ", "").replace(".", " .").replace(",", " ,").replace("?", " ?").replace("!", " !").replace("'", " ' ").replace("[ ", "[").replace(" ]", "]")
+
 
 def list_list_insertion(original_list, list_to_insert, index):
     return original_list[:index] + list_to_insert + original_list[index:]

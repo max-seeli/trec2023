@@ -1,0 +1,12 @@
+name: trec2023
+channels:
+  - defaults
+dependencies:
+  - pandas <= 1.4.4
+  - elasticsearch
+  - pytorch
+  - transformers
+  - spacy
+  - pip:
+      - git+https://github.com/WojciechKusa/clinical-trials.git
+      - python-terrier

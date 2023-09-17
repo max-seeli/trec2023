@@ -1,9 +1,34 @@
 # trec2023
 Submission for [TREC (Text Retrieval Conference) Clinical Trials 2023](http://trec-cds.org/2023.html)
 
-For using spaCy: 
+## Installation
 
+Download the clinical trial data from the [TREC CDS 2023 Website](http://trec-cds.org/2023.html) and place it in the `data/clinical_trials/raw` folder.
+You can use the following script to download the data (takes a few minutes: ~2GB):
+  
+```bash
+bash setup.sh
+```
+
+To setup the python environment including the parser from [WojciechKusa/clinical-trials](https://github.com/WojciechKusa/clinical-trials/) you need `gcc` installed (for python-terrier):
+
+Conda:
+```bash
+conda env create -f environment.yml
+conda activate trec2023
+```  
+
+Pip:
+```bash
+pip install -r requirements.txt
+```
+
+Either way you need to download the spaCy model for the trial preprocessing:
+```bash
 python -m spacy download en_core_web_sm
+```
+
+Finally to be able to use python-terrier you also need a Java Development Kit (JDK) installed.
 
 # Approaches:
 

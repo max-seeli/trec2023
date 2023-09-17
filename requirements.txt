@@ -1,0 +1,7 @@
+pandas<=1.4.4
+elasticsearch
+torch
+transformers
+spacy
+python-terrier
+git+https://github.com/WojciechKusa/clinical-trials.git

@@ -80,69 +80,29 @@ Example enriched patient representation:
 
 For the enrichment the following query was used:
 ```
-{
-        "size": 1000,
-        "query": {
-            "bool": {
-                "must": [
-                    {
-                        "query_string": {
-                            "query": diagnosis
-                        }
-                    },
-                    {
-                        "match": {
-                            "gender": {
-                                "query": f"A {gender}",
-                                "operator": "or"
-                            }
-                        }
-                    },
-                    {
-                        "bool": {
-                            "should": [
-                                {
-                                    "bool": {
-                                        "must_not": {
-                                            "exists": {
-                                                "field": "minimum_age"
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "bool": {
-                                        "must_not": {
-                                            "exists": {
-                                                "field": "maximum_age"
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "range": {
-                                        "minimum_age": {
-                                            "lte": min_age,
-                                            "boost": 2
-                                        }
-                                    }
-                                },
-                                {
-                                    "range": {
-                                        "maximum_age": {
-                                            "gte": max_age,
-                                            "boost": 2
-                                        }
-                                    }
-                                }
-                            ],
-                            "minimum_should_match": 2
-                        }
-                    }
-                ]
-            }
-        }
-    }
+Please consider this kind of format:
+
+<topic number="40" template="type 2 diabetes">
+<field name="definitive diagnosis">yes</field>
+<field name="HbA1c">6.3</field>
+<field name="glucose">115 fasting blood sugar</field>
+<field name="BMI">40</field>
+<field name="insulin">no</field>
+<field name="metformin">8.5 mL</field>
+<field name="other anti-diabetic drugs">no</field>
+<field name="diet restrictions">low-calorie</field>
+<field name="exercise">no</field>
+<field name="ketoacidosis history"/>
+<field name="comorbidities">chronic kidney disease</field>
+<field name="hospitalization events">never</field>
+</topic>
+
+Please convert this into free text. Take this style as an example:
+
+Patient is a 45-year-old man with a history of anaplastic astrocytoma of the spine complicated by severe lower extremity weakness and urinary retention s/p Foley catheter, high-dose steroids, hypertension, and chronic pain. The tumor is located in the T-L spine, unresectable anaplastic astrocytoma s/p radiation. Complicated by progressive lower extremity weakness and urinary retention. Patient initially presented with RLE weakness where his right knee gave out with difficulty walking and right anterior thigh numbness. MRI showed a spinal cord conus mass which was biopsied and found to be anaplastic astrocytoma. Therapy included field radiation t10-l1 followed by 11 cycles of temozolomide 7 days on and 7 days off. This was followed by CPT-11 Weekly x4 with Avastin Q2 weeks/ 2 weeks rest and repeat cycle. 
+
+Do NOT by any terms make up information. Try to stay short.
+If the patient's age and gender are not given in the xml format, stay neutral and do not make up age or gender.
 ```
 
 With the enriched topics we used the approach described in the paper [Effective matching of patients to clinical trials using entity extraction and neural re-ranking](https://www.sciencedirect.com/science/article/pii/S153204642300165X) of Wojciech Kusa et al. 

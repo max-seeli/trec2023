@@ -80,7 +80,69 @@ Example enriched patient representation:
 
 For the enrichment the following query was used:
 ```
-Coming soon!
+{
+        "size": 1000,
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "query_string": {
+                            "query": diagnosis
+                        }
+                    },
+                    {
+                        "match": {
+                            "gender": {
+                                "query": f"A {gender}",
+                                "operator": "or"
+                            }
+                        }
+                    },
+                    {
+                        "bool": {
+                            "should": [
+                                {
+                                    "bool": {
+                                        "must_not": {
+                                            "exists": {
+                                                "field": "minimum_age"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "bool": {
+                                        "must_not": {
+                                            "exists": {
+                                                "field": "maximum_age"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "range": {
+                                        "minimum_age": {
+                                            "lte": min_age,
+                                            "boost": 2
+                                        }
+                                    }
+                                },
+                                {
+                                    "range": {
+                                        "maximum_age": {
+                                            "gte": max_age,
+                                            "boost": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "minimum_should_match": 2
+                        }
+                    }
+                ]
+            }
+        }
+    }
 ```
 
 With the enriched topics we used the approach described in the paper [Effective matching of patients to clinical trials using entity extraction and neural re-ranking](https://www.sciencedirect.com/science/article/pii/S153204642300165X) of Wojciech Kusa et al. 
